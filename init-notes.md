@@ -7,6 +7,8 @@ Small hand-made polygon with mayyybe 8 points for the pond. Green grass outside 
 
 Square block people with a simple fishing rod. Line is thin white, bobber is red and white.
 
+Simple controls: keyboard WSAD/arrows + mouse/cursor for casting direction. Cursor dictates direction only, not casting location.
+
 Fishing rod casts some distance (min/max timing thing). Ideally a player can cast either into the middle of the pond or close enough so that a fish in the middle could still possibly bite.
 
 Start with bobber and random chance based on location of cast. Consider adding lure options later. Keep it simple.
@@ -15,12 +17,17 @@ Fish will not be visible to the player, the player will need to learn where fish
 
 People can move, cast just has to hit in the water. People can't walk into the water.
 
+
 FIXED number of fish per round. Each fish is an actual game object that moves around. Need to consider how these fish can move around in a realistic way, with a radius where they may be interested in biting.
 > Idea for fish movement: Fish movement works in "ticks" where the fish moves in a random direction, possibly constrained (e.g. between 0 and 140 degrees) from its current orientation. Then, the fish darts forward to its new location. Some mechanism must help fish not crowd into specific areas over the course of the game. Variables to control tempo of movement. Not all fish need to move at the same time, each should be unique.
 
+When a fish bites, the player has a short amount of time to click or set the hook in some other fashion. They may have a small bit of reeling. A fish that bit and does not get caught can bite again with no extra delay.
+
+Each fish should have some attributes and potentially something special about it. Length and weight are all there, with normally distributed values centered around some reasonable initial trout measurements.
+
 One to two trophy fish that are unique to each round, initiates some sort of a title for the player. Not all trophy fish are present per round. Goal is 3-5 for initial prototype. Minimal back-story but different icon.
 
-Score is number of fish caught when the timer "derby" ends.
+Score is number of fish caught when the timer "derby" ends. TBD on additional modifiers such as longest / heaviest / extra points for trophy fish.
 
 Timer resets at 2 or 5 minutes (variable) for initial prototype
 
