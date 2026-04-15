@@ -9,6 +9,7 @@ Fish {
   weight: float          # pounds, normally distributed
   is_trophy: bool
   trophy_name: string    # null for standard fish
+  trophy_title: string   # title granted to the player who catches this fish; null for standard fish
   position: Vector2
   orientation: float     # degrees
   tick_interval: float   # seconds between movement ticks
@@ -23,6 +24,7 @@ Fish {
 Player {
   id: int
   name: string
+  title: string           # earned by catching a trophy fish; most recent or player-selected
   position: Vector2
   state: enum            # idle, casting, waiting, hooking, reeling
   fish_caught: Array[Fish]
