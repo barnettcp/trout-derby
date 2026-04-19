@@ -19,6 +19,7 @@ Primary score is total fish caught.
 | Modifier | Description | Include in Prototype? | Score |
 |---|---|---|---|
 | Longest fish bonus | Extra points for the longest catch | Yes | +1 |
+| Shortest fish bonus | Extra points for the shortest catch | Yes | +1 |
 | Heaviest fish bonus | Extra points for the heaviest catch | Yes | +1 |
 | Trophy fish bonus | Extra points for catching a trophy | Yes | +3 |
 
