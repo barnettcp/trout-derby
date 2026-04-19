@@ -64,7 +64,10 @@ project/
   - `derby_ended()` -> UI shows scoreboard, systems reset
 
 ## Collision Layers
-- Layer assignments for pond boundary, players, fish, bobbers
-- Players collide with pond edge (cannot enter water)
-- Fish contained within pond polygon
-- Bobbers only valid when inside water polygon
+
+| Layer | Name | Collides With | Notes |
+|---|---|---|---|
+| 1 | Pond Boundary | Player, Fish, Bobber | Keeps player and fish inside/outside |
+| 2 | Player | Pond Boundary | Cannot enter water |
+| 3 | Fish | Pond Boundary | Contained within polygon |
+| 4 | Bobber | Pond Boundary | Invalid if it lands outside water |

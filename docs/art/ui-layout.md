@@ -41,10 +41,17 @@
 ## Inkscape Workflow
 - Each UI screen as a separate Inkscape file or artboard
 - Export dimensions matched to Godot viewport
-- Font choices: TBD (must be freely licensed)
-- Consistent padding and margin rules: TBD
+
+| Item | Decision | Notes |
+|---|---|---|
+| Base resolution | TBD | Must match Godot project settings |
+| Font | TBD | Must be freely licensed |
+| Padding / margin rule | TBD | e.g. 8px or 16px grid |
+| Mobile min tap size | TBD | Final game only |
 
 ## Responsive / Scaling
-- Base resolution: TBD
-- How UI scales for different window sizes
-- Mobile touch targets (final game): minimum tap size
+
+| Scope | Strategy | Notes |
+|---|---|---|
+| Prototype | Fixed resolution | No scaling needed |
+| Final Game | TBD | Stretch, letterbox, or viewport scale |

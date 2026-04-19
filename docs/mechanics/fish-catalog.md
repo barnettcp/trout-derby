@@ -1,14 +1,16 @@
 # Fish Catalog
 
 ## Standard Fish
-- All standard fish are trout (species details TBD)
-- Attributes:
-  - Length (normally distributed around a center value)
-  - Weight (normally distributed, correlated with length)
-  - Rounds since last caught (tracked per fish, persisted across rounds)
-- Center values and standard deviations to be defined
-- Each fish instance rolls its own length/weight at spawn
-- Fish are persistent entities across rounds; they are returned to the pond after each derby and their catch history carries forward
+
+All standard fish are trout. Each fish rolls its own length and weight at spawn from a normal distribution. Fish are persistent across rounds — returned to the pond after each derby with their catch history intact.
+
+### Standard Fish Attributes
+
+| Attribute | Distribution | Mean | Std Dev | Notes |
+|---|---|---|---|---|
+| Length | Normal | TBD in | TBD in | |
+| Weight | Normal | TBD lbs | TBD lbs | Correlated with length |
+| Rounds Since Caught | Tracked | — | — | Persisted across rounds; 0 if caught this round |
 
 ## Trophy Fish
 For replayability, randomness, and expandability, there will be trophy fish included inthe game. The team must be able to easily add additional trophy fish. The long-term goal will be to keep these fresh and fun, with a few placeholders created for the prototype. Players will not know which trophy fish is in the pond, but all of them will be able to see when the trophy fish was caught by someone, through a small golden fish icon.
@@ -27,9 +29,9 @@ For replayability, randomness, and expandability, there will be trophy fish incl
 
 | Name | Description | Length | Weight | Notes | Title Gained |
 |------|-------------|--------|--------|-------| -------------|
-| Scruffy  | A large ranbow trout | TBD    | TBD    | He's got a moustache!   | the Cleanly |
-| Sally | A yellow/brown trout | TBD | TBD | She's beautiful! | the Civilized |
-| Old Smokey | A brook trout | TBD | TBD | Look at those spots! | the Spotted |
+| Scruffy the Cleanly | A large ranbow trout | TBD    | TBD    | He's got a moustache!   | the Cleanly |
+| Sally the Civilized | A yellow/brown trout | TBD | TBD | She's beautiful! | the Civilized |
+| Old Smokey the Wise | A wise old brook trout | TBD | TBD | Look at those spots! | the Wise |
 
 ## Future Considerations
 - Additional species beyond trout

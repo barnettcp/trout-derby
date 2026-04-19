@@ -30,7 +30,15 @@
 - Square block person
 - Minimal features: maybe eyes or a hat to indicate facing direction
 - Holds a simple fishing rod (thin line from hand)
-- Dimensions: TBD pixels
+
+### Character and Element Sizes
+
+| Element | Width | Height | Notes |
+|---|---|---|---|
+| Player body | TBD px | TBD px | Square block |
+| Fishing rod | TBD px | TBD px | Thin rectangle |
+| Bobber | TBD px diameter | — | Circle, red/white split |
+| Fishing line | 1–2 px | — | Thin white |
 
 ## Fishing Rod and Line
 - Rod: thin rectangle extending from the player
@@ -50,7 +58,10 @@
 - Catch: bobber and line retract, brief catch popup
 
 ## Asset Pipeline
-- UI elements designed in Inkscape
-- Export as SVG or PNG depending on element
-- Naming convention for asset files: TBD
-- Resolution and scale: TBD (pixel density, base resolution)
+
+| Item | Decision | Notes |
+|---|---|---|
+| Base resolution | TBD | Set in Godot project settings |
+| Export format | SVG or PNG per element | UI elements from Inkscape |
+| Pixel density / scale | TBD | |
+| Asset naming convention | TBD | e.g. `snake_case`, prefix by type |

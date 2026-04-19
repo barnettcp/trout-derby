@@ -1,30 +1,51 @@
 # Fishing Mechanics
 
 ## Casting
-- Player aims with cursor (sets direction from character)
-- Cast initiated with a key/click
-- Cast distance determined by a timing mechanic (hold and release)
-  - Minimum distance: just past the shore
-  - Maximum distance: center of the pond
-- Cast must land in water; casts that land on land fail gracefully
-- Bobber lands at the computed point; line drawn from rod tip to bobber
+
+Player aims with the cursor (direction only, not target location). Cast distance is controlled by a hold-and-release power bar. The bobber lands at the computed point; a line is drawn from the rod tip to the bobber. Casts that land on land fail gracefully.
+
+### Casting Variables
+
+| Variable | Description | Value | Notes |
+|---|---|---|---|
+| Min Cast Distance | Closest valid landing point | TBD | Just past the shore |
+| Max Cast Distance | Farthest valid landing point | TBD | Roughly center of pond |
+| Power Bar Speed | How fast the bar fills | TBD | |
+
+---
 
 ## Waiting for a Bite
-- Bobber sits in the water at the cast location
-- Fish within a bite radius of the bobber may attempt to bite
-- Bite chance influenced by proximity of fish to bobber
-- Visual/audio cue when a fish bites (bobber dip, sound)
+
+Bobber sits in the water. Fish within bite radius may attempt to bite. Visual and audio cue on bite (bobber dip + sound).
+
+---
 
 ## Setting the Hook
-- Player has a short reaction window to click/press after the bite cue
-- Successful hook: fish is caught, removed from the pond
-- Missed hook: fish escapes but can bite again immediately (no cooldown)
+
+Player has a short reaction window after the bite cue. Successful hook removes the fish from the pond. Missed hook releases the fish with no cooldown.
+
+---
 
 ## Reeling
-- Minimal reeling mechanic for prototype
-- Consider expanding for final game (fish fight, tension, etc.)
 
-## Edge Cases
-- Player moves while line is cast: what happens?
-- Player casts while already casting: ignored or cancels?
-- Bobber lands exactly on the shoreline polygon edge
+### Prototype Reeling — *Decision Required*
+
+**Option A — No reeling**
+Hook = catch. Fish is immediately landed.
+
+**Option B — Single input**
+Player holds a button briefly to reel in. No tension mechanic.
+
+> **Selected:** TBD
+
+*Full fish-fight reeling is deferred to post-prototype.*
+
+---
+
+## Edge Cases — *Decisions Required*
+
+| Situation | Behavior | Decision |
+|---|---|---|
+| Player moves while line is cast | Cancel cast? Lock movement? | TBD |
+| Player casts while already casting | Ignore input or cancel current cast | TBD |
+| Bobber lands on shoreline edge | Treat as land (fail) or water (valid) | TBD |
