@@ -5,41 +5,68 @@
 - 2D, top-down perspective
 
 ## Project Structure
-<!-- Proposed directory layout for the Godot project -->
+<!-- Full repo layout. project/ is the Godot project root; tools/ lives alongside it. -->
 ```
-project/
-├── scenes/
-│   ├── main.tscn
-│   ├── pond.tscn
-│   ├── player.tscn
-│   ├── fish.tscn
-│   ├── fishing_rod.tscn
-│   ├── bobber.tscn
-│   └── ui/
-│       ├── hud.tscn
-│       ├── scoreboard.tscn
-│       └── main_menu.tscn
-├── scripts/
-│   ├── main.gd
-│   ├── pond.gd
-│   ├── player.gd
-│   ├── fish.gd
-│   ├── fishing_rod.gd
-│   ├── bobber.gd
-│   ├── derby_manager.gd
-│   ├── fish_spawner.gd
-│   └── ui/
-├── assets/
-│   ├── sprites/
-│   ├── audio/
-│   └── ui/          # Inkscape-exported SVGs/PNGs
-├── data/
-│   ├── fish_data.json
-│   └── pond_data.json
-└── autoloads/
-    ├── game_state.gd
-    └── config.gd
+trout-derby/                         # repo root
+├── docs/
+├── tools/                           # Data pipeline — outside Godot project
+│   ├── fish_definitions.csv         # Source of truth — hand-authored, edit here
+│   ├── generate_fish.py             # Reads CSV, rolls unset attributes, writes fish_data.json
+│   └── notebooks/
+│       └── fish_simulation.ipynb    # For tuning distributions and visualizing behavior
+└── project/                         # Godot project root
+    ├── scenes/
+    │   ├── main.tscn
+    │   ├── pond.tscn
+    │   ├── player.tscn
+    │   ├── fish.tscn
+    │   ├── fishing_rod.tscn
+    │   ├── bobber.tscn
+    │   └── ui/
+    │       ├── hud.tscn
+    │       ├── scoreboard.tscn
+    │       └── main_menu.tscn
+    ├── scripts/
+    │   ├── main.gd
+    │   ├── pond.gd
+    │   ├── player.gd
+    │   ├── fish.gd
+    │   ├── fishing_rod.gd
+    │   ├── bobber.gd
+    │   ├── derby_manager.gd
+    │   ├── fish_spawner.gd
+    │   └── ui/
+    ├── assets/
+    │   ├── sprites/
+    │   ├── audio/
+    │   └── ui/              # Inkscape-exported SVGs/PNGs
+    ├── data/
+    │   ├── fish_data.json   # Generated — read by Godot at startup
+    │   └── pond_data.json
+    └── autoloads/
+        ├── game_state.gd
+        └── config.gd
 ```
+
+---
+
+## Data Pipeline
+
+Fish data is authored in CSV and converted to JSON for Godot. The JSON file is what the game reads; the CSV is what you edit.
+
+| File | Format | Purpose | Edit by hand? |
+|---|---|---|---|
+| `fish_definitions.csv` | CSV | Source of truth for all fish attributes | Yes |
+| `fish_data.json` | JSON | Generated output read by Godot at startup | Only for quick tweaks |
+| `generate_fish.py` | Python | Reads CSV, rolls unset stats, writes JSON | No |
+| `fish_simulation.ipynb` | Jupyter | Simulate movement, tune distributions | No |
+
+**Pipeline:**
+1. Edit `fish_definitions.csv` (or run the notebook to tune values)
+2. Run `generate_fish.py` to produce `fish_data.json`
+3. Godot reads `fish_data.json` via `FileAccess` + `JSON.parse_string()` on startup
+
+`fish_data.json` can be committed to the repo or gitignored — either is fine since it is fully reproducible from the CSV.
 
 ## Scene Tree Overview
 - Root

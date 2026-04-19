@@ -6,7 +6,7 @@ Round ends when the timer expires. In the prototype, the round begins when the p
 
 | Variable | Description | Value | Notes |
 |---|---|---|---|
-| Round Duration | Length of a derby in seconds | TBD | 2 or 5 minutes for prototype |
+| Round Duration | Length of a derby in seconds | 5 minutes | 2 or 5 minutes for prototype |
 
 ---
 
@@ -14,15 +14,15 @@ Round ends when the timer expires. In the prototype, the round begins when the p
 
 Primary score is total fish caught.
 
-### Score Modifiers — *Decision Required*
+### Score Modifiers — *Decided*
 
-| Modifier | Description | Include in Prototype? |
-|---|---|---|
-| Longest fish bonus | Extra points for the longest catch | TBD |
-| Heaviest fish bonus | Extra points for the heaviest catch | TBD |
-| Trophy fish bonus | Extra points for catching a trophy | TBD |
+| Modifier | Description | Include in Prototype? | Score |
+|---|---|---|---|
+| Longest fish bonus | Extra points for the longest catch | Yes | +1 |
+| Heaviest fish bonus | Extra points for the heaviest catch | Yes | +1 |
+| Trophy fish bonus | Extra points for catching a trophy | Yes | +3 |
 
-> **Tiebreaker rule:** TBD
+> **Tiebreaker rule:** If players tie (only applicable to Longest or Heaviest), the score modifier is given equally to all players who are tying. This means sharing an achievement is to be celebrated together rather than leaving regret for not being an outright winner.
 
 ---
 
@@ -30,11 +30,11 @@ Primary score is total fish caught.
 
 Awards are given at the end of each derby and persist across rounds.
 
-| Award | Condition | Notes |
+| Award | Condition | Award Given |
 |---|---|---|
-| Most Fish | Player with the highest fish count | |
-| Biggest Catch | Longest or heaviest single fish | TBD which metric |
-| Trophy Catch | Catching the derby's trophy fish | |
+| Most Fish | Player(s) with the highest fish count | A gold star |
+| Biggest Catch | Longest single fish | A blue ribbon |
+| Trophy Catch | Catching the derby's trophy fish | A small trophy |
 
 ---
 

@@ -8,8 +8,8 @@ All standard fish are trout. Each fish rolls its own length and weight at spawn 
 
 | Attribute | Distribution | Mean | Std Dev | Notes |
 |---|---|---|---|---|
-| Length | Normal | TBD in | TBD in | |
-| Weight | Normal | TBD lbs | TBD lbs | Correlated with length |
+| Length | Normal | 12 in | 2 in | Manually add a few bigger/smaller ones as needed |
+| Weight | Normal | 0.05 lbs/in | 0.01 lbs/in | Pounds per inch. Simulate, then apply to fish length  |
 | Rounds Since Caught | Tracked | — | — | Persisted across rounds; 0 if caught this round |
 
 ## Trophy Fish
@@ -25,13 +25,13 @@ For replayability, randomness, and expandability, there will be trophy fish incl
 - Catching a trophy fish grants the player a title. The title will go after the player's chosen name.
 
 ## Trophy Fish Roster
-<!-- Define each trophy fish here -->
+This should be a list that grows over time with interest and ideas. Prototype through final game is just fine to only have these three.
 
 | Name | Description | Length | Weight | Notes | Title Gained |
 |------|-------------|--------|--------|-------| -------------|
 | Scruffy the Cleanly | A large ranbow trout | TBD    | TBD    | He's got a moustache!   | the Cleanly |
-| Sally the Civilized | A yellow/brown trout | TBD | TBD | She's beautiful! | the Civilized |
-| Old Smokey the Wise | A wise old brook trout | TBD | TBD | Look at those spots! | the Wise |
+| Sally the Civilized | A yellow/brown trout | TBD | TBD | She's beautiful! Look at that dress! | the Civilized |
+| Old Smokey the Wise | A wise old brook trout | TBD | TBD | How did he even light that pipe? | the Wise |
 
 ## Future Considerations
 - Additional species beyond trout
