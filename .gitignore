@@ -1,0 +1,37 @@
+# -----------------------------------------------
+# Godot
+# -----------------------------------------------
+project/.godot/
+project/android/
+*.tmp
+*.import
+
+# Exported binaries
+project/export/
+
+# -----------------------------------------------
+# Python / Jupyter
+# -----------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+.env
+.venv
+venv/
+
+# -----------------------------------------------
+# Art — exported renders (keep source SVGs)
+# -----------------------------------------------
+docs/art/mockups/*.png
+docs/art/mockups/*.jpg
+docs/art/mockups/*.jpeg
+docs/art/mockups/*.pdf
+
+
+# -----------------------------------------------
+# OS
+# -----------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini

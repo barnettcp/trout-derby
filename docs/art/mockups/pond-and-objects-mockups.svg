@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="pond-and-objects-mockups.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.0334082"
+     inkscape:cx="239.25349"
+     inkscape:cy="545.63566"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="47.211377"
+       y="35.408533"
+       width="271.46542"
+       height="74.751347"
+       id="rect6" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#35a300;fill-opacity:1;stroke:#16db65;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
+       id="rect1"
+       width="205.72862"
+       height="291.47955"
+       x="1.8401486"
+       y="4.4163566"
+       ry="0.40661925"
+       inkscape:label="Grass" />
+    <path
+       style="fill:#2cb7d8;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
+       d="M 87.223047,92.743492 41.955389,123.65799 c 0,0 -6.992564,61.829 -4.416356,63.66915 2.576208,1.84015 70.661717,34.96282 70.661717,34.96282 l 57.78067,-39.01115 15.08921,-87.223049 -46.00371,4.416359 z"
+       id="path1"
+       inkscape:label="Pond" />
+    <rect
+       style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="rect2"
+       width="9.936801"
+       height="19.137547"
+       x="13.617101"
+       y="148.31598"
+       ry="0.40661925"
+       inkscape:label="player" />
+    <ellipse
+       style="fill:#a59317;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="path2"
+       cx="18.769516"
+       cy="158.06877"
+       rx="4.4163566"
+       ry="4.6003718"
+       inkscape:label="head" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#3e090d;stroke-width:0.83;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1;stroke-dasharray:none"
+       d="m 23.875714,157.56525 c 14.025262,-7.38278 13.699093,-7.07516 13.699093,-7.07516"
+       id="path3"
+       inkscape:label="Rod" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.830001;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="path4"
+       cx="53.962357"
+       cy="154.54948"
+       rx="1.8401487"
+       ry="1.6791357"
+       inkscape:label="bobber bottom" />
+    <path
+       id="path5"
+       style="fill:#dc1717;fill-opacity:1;stroke:none;stroke-width:0.830001;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       d="m 52.340828,154.62357 c 0,0 0.09456,-1.51812 1.474671,-1.51812 1.380111,0 1.627636,0.8131 1.688424,1.61292 z"
+       sodipodi:nodetypes="cscc"
+       inkscape:label="bobber top" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#dbe4de;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       d="m 37.631041,150.24814 15.917286,3.12825"
+       id="path6"
+       inkscape:label="line" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.44502912,0,0,0.44502912,-14.984073,-6.5042279)"
+       id="text6"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.4396px;font-family:'Gill Sans Ultra Bold Condensed';-inkscape-font-specification:'Gill Sans Ultra Bold Condensed, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);display:inline;fill:#dc1717;fill-opacity:1;stroke:#3e090d;stroke-width:0.755906;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       inkscape:label="timer text"><tspan
+         x="47.210938"
+         y="51.910888"
+         id="tspan1">Derby Timer: 5:16 remaining</tspan></text>
+  </g>
+</svg>
