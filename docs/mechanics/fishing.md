@@ -4,6 +4,10 @@
 
 Player aims with the cursor (direction only, not target location). Cast distance is controlled by a hold-and-release power bar. The bobber lands at the computed point; a line is drawn from the rod tip to the bobber. Casts that land on land fail gracefully.
 
+### Facing and Casting Arc
+
+The player faces one of four cardinal directions (up / down / left / right) and can only cast within a **150° forward arc** — 75° to either side of the facing direction. Cursor positions outside this arc are clamped to the nearest arc boundary. This prevents side-to-side casts and keeps the facing direction meaningful.
+
 ### Casting Variables
 
 | Variable | Description | Value | Notes |

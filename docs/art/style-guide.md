@@ -31,18 +31,21 @@ Generally aim for bright and cheerful colors. Subject to change with development
 - No shoreline texture for prototype; consider a thin border line
 
 ## Player Character
-- Square block person
-- Minimal features: maybe eyes or a hat to indicate facing direction
-- Holds a simple fishing rod (thin line from hand)
+- Rectangular top-down body, wider side-to-side than front-to-back
+- Round head, centered side-to-side and offset toward the front of the body
+- Facing direction: 4-directional (up / down / left / right); player snaps to cardinal directions on movement
+- Rod extends from the front edge of the body, pointing in the facing direction
+- Casting arc: forward-facing 150° only (75° each side); cursor positions outside the arc are clamped to the nearest boundary
 
 ### Character and Element Sizes
 
 | Element | Width | Height | Notes |
 |---|---|---|---|
-| Player body | TBD px | TBD px | Square block |
-| Fishing rod | TBD px | TBD px | Thin rectangle |
-| Bobber | TBD px diameter | — | Circle, red/white split |
-| Fishing line | 1–2 px | — | Thin white |
+| Player body | 32px | 20px | Landscape rectangle in top-down view; "width" is side-to-side, "height" is front-to-back |
+| Player head | 12px diameter | — | Circle; centered side-to-side, offset 4px toward front edge of body |
+| Fishing rod | 4px | 28px | Thin rectangle; extends from front edge center in facing direction; rotated in-engine |
+| Bobber | 10px diameter | — | Circle, red/white split |
+| Fishing line | 1–2px | — | Thin white |
 
 ## Fishing Rod and Line
 - Rod: thin rectangle extending from the player
@@ -66,7 +69,7 @@ Generally aim for bright and cheerful colors. Subject to change with development
 
 | Item | Decision | Notes |
 |---|---|---|
-| Base resolution | TBD | Set in Godot project settings |
-| Export format | SVG or PNG per element | UI elements from Inkscape |
-| Pixel density / scale | TBD | |
-| Asset naming convention | TBD | e.g. `snake_case`, prefix by type |
+| Base resolution | **1280×720** | Matches ui-layout.md; set in Godot Project Settings > Display > Window |
+| Export format | PNG | Export from Inkscape at 1:1 scale; keep `.svg` as source file |
+| Pixel density / scale | 1:1 | No scaling at base resolution; assets drawn at final pixel size |
+| Asset naming convention | `snake_case`, prefixed by type | e.g. `icon_fish_standard.png`, `icon_fish_trophy.png`, `sprite_player_body.png`, `icon_bite_alert.png` |
