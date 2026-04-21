@@ -35,3 +35,13 @@ docs/art/mockups/*.pdf
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# -----------------------------------------------
+# Development Notes
+#
+# Manually added as I rush through these notes. Reduces clutter on the repo
+# -----------------------------------------------
+init-notes.md
+deferred-ideas.md
+gapfills.md
+

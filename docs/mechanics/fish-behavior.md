@@ -29,7 +29,7 @@ At 50 fish this is negligible overhead, and it allows per-fish personality varia
 
 | Variable | Description | Min | Max | Notes |
 |---|---|---|---|---|
-| Tick Interval | Seconds between movement ticks | 5s | 45s | Assigned per fish at spawn; fish attribute |
+| Movement Tick Interval | Seconds between movement ticks | 5s | 45s | Assigned per fish at spawn; fish attribute |
 | Move Distance | Distance traveled per tick | 0.3m | 1.0m | |
 | Turn Angle | Max heading change per tick | 0° | 140° | Relative to current orientation |
 
@@ -61,13 +61,12 @@ Hand-placed zones that redirect fish away from edges or clusters. The logic per 
 A fish may bite when a bobber is within its bite radius. On a successful bite, the player has a short window to set the hook. A fish that escapes can bite again immediately.
 
 ### Bite Variables
-Initially, keep this fixed as its own system. 
 
-**Note:** Consider eventually giving these to the fish as attributes for more personality per fish. This would result in some fish being rarely caught (e.g. small radius combined with fast movement) and others frequently caught (e.g. large radius, fast movement, high bite chance). Long-term this could be used to continuously adjust an in-game point system based on the rarity of a catch, which would be on-brand with the derby theme. 
+Bite check interval is a **per-fish attribute** assigned at spawn, giving each fish a distinct personality (eager vs. patient).
 
 | Variable | Description | Value | Notes |
 |---|---|---|---|
-| Bite Check Frequency | How often bite proximity is evaluated | TBD | Global timer, separate from movement; 0.25–0.5s recommended |
+| Bite Check Interval | Seconds between bite proximity checks | Gamma(α=2, θ=3), min 2s | Per-fish attribute; mean ~6s, mode ~3s; simulated in generate_fish.ipynb |
 | Bite Radius | Distance from fish at which it may bite | 1m | |
 | Bite Chance | Probability of a bite attempt per check | 100% within 0.2m, linearly scales down to 20% at edge of radius | Distance factors in |
 | Hook Window | Seconds player has to set the hook | 1 second | |

@@ -25,13 +25,13 @@ For replayability, randomness, and expandability, there will be trophy fish incl
 - Catching a trophy fish grants the player a title. The title will go after the player's chosen name.
 
 ## Trophy Fish Roster
-This should be a list that grows over time with interest and ideas. Prototype through final game is just fine to only have these three.
+This should be a list that grows over time with interest and ideas. Prototype through final game is just fine to only have these three. Get creative with them as part of development.
 
 | Name | Description | Length | Weight | Notes | Title Gained |
 |------|-------------|--------|--------|-------| -------------|
-| Scruffy the Cleanly | A large ranbow trout | TBD    | TBD    | He's got a moustache!   | the Cleanly |
-| Sally the Civilized | A yellow/brown trout | TBD | TBD | She's beautiful! Look at that dress! | the Civilized |
-| Old Smokey the Wise | A wise old brook trout | TBD | TBD | How did he even light that pipe? | the Wise |
+| Scruffy the Cleanly | A large ranbow trout | 25.9in    | 7.8lb    | He's got a moustache!   | the Cleanly |
+| Sally the Civilized | A yellow/brown trout | 23.2in | 6.2lb | She's beautiful! Look at that dress! | the Civilized |
+| Old Smokey the Wise | A wise old brook trout | 22.2in | 6.0lb | How did he even light that pipe? | the Wise |
 
 ## Future Considerations
 - Additional species beyond trout

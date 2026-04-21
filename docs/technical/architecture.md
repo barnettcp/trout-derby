@@ -4,13 +4,35 @@
 - Godot 4 with GDScript
 - 2D, top-down perspective
 
+---
+
+## World Coordinate Scale
+
+Godot 2D uses pixels as its native unit. All game distances are designed in meters and converted using a fixed scale.
+
+| Scale | Value |
+|---|---|
+| Meters per pixel | **0.33 m/px** |
+| Pixels per meter | ~3.03 px/m |
+
+### Key Distance Reference
+
+| Distance | Meters | Pixels (approx.) |
+|---|---|---|
+| Min cast distance | 5 m | 15 px |
+| Max cast distance | 18 m | 55 px |
+| Fish bite radius | 1 m | 3 px |
+| Max pond width (center-reachable) | 36 m | ~109 px |
+
+> **Pond sizing note:** For a player on the shoreline to reach the pond center with a max cast, the pond must be no wider than ~109px (36m diameter). UI elements (HUD, font sizes, border widths) are always defined in raw pixels independent of this scale.
+
 ## Project Structure
 <!-- Full repo layout. project/ is the Godot project root; tools/ lives alongside it. -->
 ```
 trout-derby/                         # repo root
 ├── docs/
 ├── tools/                           # Data pipeline — outside Godot project
-│   ├── fish_definitions.csv         # Source of truth — hand-authored, edit here
+│   ├── fish_pool.csv                # Source of truth — hand-authored, edit here
 │   ├── generate_fish.py             # Reads CSV, rolls unset attributes, writes fish_data.json
 │   └── notebooks/
 │       └── fish_simulation.ipynb    # For tuning distributions and visualizing behavior
@@ -56,7 +78,7 @@ Fish data is authored in CSV and converted to JSON for Godot. The JSON file is w
 
 | File | Format | Purpose | Edit by hand? |
 |---|---|---|---|
-| `fish_definitions.csv` | CSV | Source of truth for all fish attributes | Yes |
+| `fish_pool.csv` | CSV | Source of truth for all fish attributes | Yes |
 | `fish_data.json` | JSON | Generated output read by Godot at startup | Only for quick tweaks |
 | `generate_fish.py` | Python | Reads CSV, rolls unset stats, writes JSON | No |
 | `fish_simulation.ipynb` | Jupyter | Simulate movement, tune distributions | No |
@@ -78,10 +100,21 @@ Fish data is authored in CSV and converted to JSON for Godot. The JSON file is w
 
 ## Key Systems
 - **Derby Manager**: round lifecycle, timer, start/end logic
-- **Fish Spawner**: instantiates fish with attributes, places via noise/map
+- **Fish Spawner**: instantiates fish with attributes, places randomly inside pond polygon (prototype); noise-map distributions deferred to post-prototype
 - **Casting System**: input handling, direction calc, distance timing, bobber placement
 - **Bite System**: proximity checks between fish and bobbers, bite rolls
 - **Score Tracker**: per-player fish count, awards, persistence
+
+---
+
+## Player Spawn
+
+| Scope | Behavior |
+|---|---|
+| Prototype | Player spawns at a fixed position near the top-left of the screen, outside the pond, facing the pond |
+| Final Game | Random position within a spawn zone to the left or right of the pond, facing inward |
+
+Spawn position is placed by feel during scene construction; no JSON needed.
 
 ## Signal Flow
 - Outline major signals between systems
