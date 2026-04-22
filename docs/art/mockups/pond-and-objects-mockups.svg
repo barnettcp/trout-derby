@@ -22,17 +22,17 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.50835204"
-     inkscape:cx="729.80921"
-     inkscape:cy="115.07773"
+     inkscape:document-units="px"
+     inkscape:zoom="0.71891835"
+     inkscape:cx="719.8314"
+     inkscape:cy="344.26719"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     showguides="true" />
+     showguides="false" />
   <defs
      id="defs1">
     <rect
@@ -52,7 +52,7 @@
        width="336.35538"
        height="186.85268"
        x="0.80514288"
-       y="1.8199328"
+       y="0.77898753"
        ry="0.26066285"
        inkscape:label="Grass" />
     <path
@@ -62,46 +62,40 @@
        inkscape:label="Pond"
        sodipodi:nodetypes="cccccccccc" />
     <rect
-       style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.242692;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
        id="rect2"
-       width="9.936801"
-       height="19.137547"
-       x="63.452358"
-       y="110.58171"
-       ry="0.40661925"
+       width="5.2916665"
+       height="8.4666662"
+       x="92.598824"
+       y="95.683182"
+       ry="0.17989296"
        inkscape:label="player" />
-    <ellipse
-       style="fill:#d4b820;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+    <circle
+       style="fill:#d4b820;fill-opacity:1;stroke:none;stroke-width:0.205447;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
        id="path2"
-       cx="68.604774"
-       cy="120.3345"
-       rx="4.4163566"
-       ry="4.6003718"
-       inkscape:label="head" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#3e090d;stroke-width:0.83;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
-       d="m 73.71097,119.83098 c 14.025262,-7.38278 13.699093,-7.07516 13.699093,-7.07516"
-       id="path3"
-       inkscape:label="Rod" />
-    <ellipse
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.830001;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       cx="95.773842"
+       cy="99.916512"
+       inkscape:label="head"
+       r="1.8520833" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499726;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
        id="path4"
-       cx="103.79762"
-       cy="116.81522"
-       rx="1.8401487"
-       ry="1.6791357"
-       inkscape:label="bobber bottom" />
+       cx="138.08267"
+       cy="106.95603"
+       inkscape:label="bobber bottom"
+       r="1.0583333" />
     <path
        id="path5"
-       style="fill:#dc1717;fill-opacity:1;stroke:none;stroke-width:0.830001;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
-       d="m 102.17608,116.8893 c 0,0 0.0946,-1.51812 1.47468,-1.51812 1.38011,0 1.62763,0.8131 1.68842,1.61292 z"
+       style="fill:#dc1717;fill-opacity:1;stroke:none;stroke-width:0.491741;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       d="m 137.12951,106.93635 c 0,0 0.056,-0.89943 0.87369,-0.89943 0.81766,0 0.9643,0.48173 1.00032,0.95558 z"
        sodipodi:nodetypes="cscc"
        inkscape:label="bobber top" />
     <path
        style="fill:none;fill-opacity:1;stroke:#dbe4de;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
-       d="m 87.466297,112.51387 15.917283,3.12825"
+       d="m 104.96719,100.28276 33.15794,5.92579"
        id="path6"
-       inkscape:label="line" />
+       inkscape:label="line"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        transform="matrix(0.44502912,0,0,0.44502912,98.478964,-10.668009)"
@@ -110,12 +104,20 @@
        inkscape:label="timer text"><tspan
          x="47.210938"
          y="51.910888"
-         id="tspan2">Derby Timer: 5:16 remaining</tspan></text>
+         id="tspan1">Derby Timer: 5:16 remaining</tspan></text>
     <path
        style="fill:none;stroke:#e61717;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
-       d="m 140,124 h 55"
+       d="m 198.37787,176.3498 h 54.76875"
        id="path7"
        inkscape:label="Length approx 18m"
        sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#3e090d;fill-opacity:1;stroke:none;stroke-width:0.17964;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
+       id="rect3"
+       width="7.228693"
+       height="0.61410987"
+       x="97.773842"
+       y="99.82457"
+       inkscape:label="rod" />
   </g>
 </svg>

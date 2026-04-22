@@ -23,15 +23,16 @@ def main():
     with open(INPUT_CSV, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             fish_list.append({
-                "id":           int(row["id"]),
-                "species":      row["species"].strip(),
-                "length":       float(row["length"]),
-                "weight":       float(row["weight"]),
-                "tick_interval": float(row["tick_interval"]),
-                "is_trophy":    row["is_trophy"].strip().lower() == "true",
-                "trophy_name":  row["trophy_name"].strip() or None,
-                "trophy_title": row["trophy_title"].strip() or None,
-                "notes":        row["notes"].strip(),
+                "id":                     int(row["id"]),
+                "species":                row["species"].strip(),
+                "length":                 float(row["length"]),
+                "weight":                 float(row["weight"]),
+                "movement_tick_interval": float(row["movement_tick_interval"]),
+                "bite_check_interval":    float(row["bite_check_interval"]),
+                "is_trophy":              row["is_trophy"].strip().lower() == "true",
+                "trophy_name":            row["trophy_name"].strip() or None,
+                "trophy_title":           row["trophy_title"].strip() or None,
+                "notes":                  row["notes"].strip(),
             })
 
     os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)

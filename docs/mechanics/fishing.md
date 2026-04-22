@@ -14,7 +14,7 @@ The player faces one of four cardinal directions (up / down / left / right) and 
 |---|---|
 | Charge cast | Hold left-click **or** hold Space |
 | Fire cast | Release the held input |
-| Cancel cast (reel back, no fire) | *TBD — see open question below* |
+| Cancel cast (reel back, no fire) | None initially |
 
 ### Casting Variables
 
@@ -60,7 +60,7 @@ Player holds a button briefly to reel in. No tension mechanic.
 
 ---
 
-## Edge Cases — *Decisions Required*
+## Edge Cases — *Decided*
 
 | Situation | Behavior | Decision |
 |---|---|---|
