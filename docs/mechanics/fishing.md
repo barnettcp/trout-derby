@@ -18,12 +18,12 @@ The player faces one of four cardinal directions (up / down / left / right) and 
 
 ### Casting Variables
 
-All distances stated in meters. Pixel equivalents assume a world scale of **0.33 m/px** (see [Architecture](../technical/architecture.md)).
+All distances stated in meters. Pixel equivalents use the world scale of **15 px/m** (see [Architecture](../technical/architecture.md)).
 
-| Variable | Description | Value | Pixels (0.33 m/px) | Notes |
+| Variable | Description | Value | Pixels (15 px/m) | Notes |
 |---|---|---|---|---|
-| Min Cast Distance | Closest valid landing point | 5 m | ~15 px | Just past the shore |
-| Max Cast Distance | Farthest valid landing point | 18 m | ~55 px | Center of pond reachable from shoreline |
+| Min Cast Distance | Closest valid landing point | 5 m | 75 px | Just past the shore |
+| Max Cast Distance | Farthest valid landing point | 18 m | 270 px | Center of pond reachable from shoreline |
 | Power Bar Speed | Time for bar to fill from 0% to 100% | 1 s | — | Linear fill; releasing at any point fires at that power |
 
 ---

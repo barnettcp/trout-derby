@@ -8,23 +8,25 @@
 
 ## World Coordinate Scale
 
-Godot 2D uses pixels as its native unit. All game distances are designed in meters and converted using a fixed scale.
+Godot 2D uses pixels as its native unit. All game distances are designed in meters; the scale below converts between them.
 
 | Scale | Value |
 |---|---|
-| Meters per pixel | **0.33 m/px** |
-| Pixels per meter | ~3.03 px/m |
+| Pixels per meter | **15 px/m** |
+
+This is derived from the pond dimensions: the pond is ~550px wide, representing a 36m diameter (center reachable from shoreline on a max cast).
 
 ### Key Distance Reference
 
-| Distance | Meters | Pixels (approx.) |
+| Distance | Meters | Pixels |
 |---|---|---|
-| Min cast distance | 5 m | 15 px |
-| Max cast distance | 18 m | 55 px |
-| Fish bite radius | 1 m | 3 px |
-| Max pond width (center-reachable) | 36 m | ~109 px |
+| Min cast distance | 5 m | 75 px |
+| Max cast distance | 18 m | 270 px |
+| Fish bite radius | 1 m | 15 px |
+| Pond width (approx.) | 36 m | ~550 px |
+| Pond height (approx.) | 33 m | ~500 px |
 
-> **Pond sizing note:** For a player on the shoreline to reach the pond center with a max cast, the pond must be no wider than ~109px (36m diameter). UI elements (HUD, font sizes, border widths) are always defined in raw pixels independent of this scale.
+> UI elements (HUD panels, font sizes, border widths) are always defined in raw pixels independent of this scale.
 
 ## Project Structure
 <!-- Full repo layout. project/ is the Godot project root; tools/ lives alongside it. -->
