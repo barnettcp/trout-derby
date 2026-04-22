@@ -28,6 +28,14 @@ This is derived from the pond dimensions: the pond is ~550px wide, representing 
 
 > UI elements (HUD panels, font sizes, border widths) are always defined in raw pixels independent of this scale.
 
+---
+
+## Player Variables
+
+| Variable | Value | Notes |
+|---|---|---|
+| Movement speed | 1.1 m/s → **~17 px/s** | Slightly slower than average walking pace (1.4 m/s); defined as a configurable constant in `player.gd` |
+
 ## Project Structure
 <!-- Full repo layout. project/ is the Godot project root; tools/ lives alongside it. -->
 ```
@@ -76,21 +84,32 @@ trout-derby/                         # repo root
 
 ## Data Pipeline
 
-Fish data is authored in CSV and converted to JSON for Godot. The JSON file is what the game reads; the CSV is what you edit.
+### Fish
 
 | File | Format | Purpose | Edit by hand? |
 |---|---|---|---|
 | `fish_pool.csv` | CSV | Source of truth for all fish attributes | Yes |
 | `fish_data.json` | JSON | Generated output read by Godot at startup | Only for quick tweaks |
-| `generate_fish.py` | Python | Reads CSV, rolls unset stats, writes JSON | No |
-| `fish_simulation.ipynb` | Jupyter | Simulate movement, tune distributions | No |
+| `generate_fish_json.py` | Python | Reads CSV, rolls unset stats, writes JSON | No |
+| `generate_fish.ipynb` | Jupyter | Simulate movement and bite distributions, write CSV | No |
 
 **Pipeline:**
-1. Edit `fish_definitions.csv` (or run the notebook to tune values)
-2. Run `generate_fish.py` to produce `fish_data.json`
+1. Edit `fish_pool.csv` (or run the notebook to tune distributions)
+2. Run `python tools/generate_fish_json.py` to produce `project/data/fish_data.json`
 3. Godot reads `fish_data.json` via `FileAccess` + `JSON.parse_string()` on startup
 
-`fish_data.json` can be committed to the repo or gitignored — either is fine since it is fully reproducible from the CSV.
+### Pond
+
+| File | Format | Purpose | Edit by hand? |
+|---|---|---|---|
+| `pond_editor.ipynb` | Jupyter | Define vertices, visualize shape, export JSON | Yes — edit `VERTICES` list |
+| `pond_data.json` | JSON | Generated output read by Godot at startup | Only for quick tweaks |
+
+**Pipeline:**
+1. Edit `VERTICES` in `pond_editor.ipynb` and run all cells to visualize
+2. Run the Export cell to write `project/data/pond_data.json`
+
+Godot reads `pond_data.json` and uses the `vertices` array to build the `Polygon2D` node.
 
 ## Scene Tree Overview
 - Root

@@ -1,0 +1,96 @@
+# Asset Checklist
+
+All assets are drawn in Inkscape and exported as PNG at 1:1 scale (96 DPI). Confirm your Inkscape document is set to 96 DPI (File > Document Properties > Display Units: px) so that 1 Inkscape px = 1 Godot pixel. Export each asset via **File > Export PNG Image > Selection** and verify the pixel dimensions match before exporting.
+
+Name files using `snake_case` with a type prefix per the [Style Guide](style-guide.md).
+
+---
+
+## Icons
+
+### `icon_fish_standard.png` — 20×20 px
+- [ ] Closed-path fish silhouette in a single flat color — cream `#FFF0D0` reads well against the brown HUD panel
+- [ ] Optional: tiny dot eye; skip if it looks muddy at 20px
+- [ ] Enable 1px pixel grid (View > Show/Hide > Page Grid) and snap to grid so edges land on whole pixels — prevents blurring on import
+
+---
+
+### `icon_fish_trophy.png` — 20×20 px
+- [ ] Same silhouette shape as `icon_fish_standard`; recolor fill to gold (`#F3DB34` or `#D4B820`)
+- [ ] Optional subtle star or sparkle overlay to distinguish it at a glance — keep it readable at 20px
+- [ ] Export as a separate file (not a layer toggle)
+
+---
+
+### `icon_bite_alert.png` — 32×32 px
+- [ ] Starburst / comic-explosion shape: central circle with 6–8 pointed spikes radiating outward; keep spikes fat enough to read at 32px
+- [ ] Solid fill `#F3DB34`; no outline needed — a clean silhouette reads better on varied backgrounds
+- [ ] Leave 1–2px of transparent padding inside the 32×32 canvas so Godot's scale-in tween doesn't clip the edges
+- [ ] Godot handles all animation (scale and fade); this is a static image only
+
+---
+
+## Sprites
+
+### `sprite_player.png` — ~32×52 px canvas (body + rod pointing up)
+For the prototype, make one **facing-up** sprite and let Godot rotate it. Four directional sprites can be revisited later.
+
+- [ ] Body: 32×20 px landscape rectangle, warm yellow `#F3DB34`
+- [ ] Head: 14px-diameter circle, slightly darker yellow `#D4B820`; centered horizontally, offset 2px toward the top (front) edge of the body
+- [ ] Rod: 4×28 px dark-red rectangle (`#3E090D`) extending upward from the top-center of the body — either include it here or export it as a separate file (see below); separate is more flexible
+- [ ] Transparent background; canvas tall enough to contain body + rod without clipping (~32×52 px with rod)
+- [ ] If you later go with 4 directional sprites, rename to `sprite_player_up.png`, `sprite_player_down.png`, etc.
+
+---
+
+### `sprite_fishing_rod.png` — 4×28 px
+Keeping the rod separate from the player sprite lets Godot rotate it independently for casting direction.
+
+- [ ] Thin rectangle, dark red `#3E090D`
+- [ ] At 4px wide, snap coordinates to whole pixels and disable anti-aliasing on the path to avoid blurring on export
+- [ ] Transparent background
+
+---
+
+## UI / Branding
+
+### Game logo / title art — width ~400–600 px (finalize in mockup)
+- [ ] Lay out "Trout Derby" using Fredoka or Silkscreen font
+- [ ] Convert text to path: **Path > Object to Path** — removes font dependency in Godot
+- [ ] Add a simple decorative element (fish silhouette, water-ripple line, etc.) to give it character
+- [ ] Use the 1280×720 mockup document to find a size that feels right, then document final dimensions here
+- [ ] Export at the finalized width; name `logo_title.png`
+
+---
+
+## Trophy Fish Portraits (low priority — placeholder rects are fine for the first pass)
+
+Small illustrations shown in the catch popup. Suggested size ~120×80 px; adjust to fit the 280×128 popup panel.
+
+### `icon_trophy_scruffy.png`
+- [ ] Rainbow trout silhouette with a tiny drawn-on moustache (`#3E090D`)
+- [ ] Transparent background
+
+### `icon_trophy_sally.png`
+- [ ] Yellow/brown trout silhouette with a small bow or collar shape
+- [ ] Transparent background
+
+### `icon_trophy_smokey.png`
+- [ ] Brook trout silhouette with a tiny pipe
+- [ ] Transparent background
+
+---
+
+## Asset Summary
+
+| File | Size | Status |
+|---|---|---|
+| `icon_fish_standard.png` | 20×20 | - |
+| `icon_fish_trophy.png` | 20×20 | - |
+| `icon_bite_alert.png` | 32×32 | - |
+| `sprite_player.png` | ~32×52 | - |
+| `sprite_fishing_rod.png` | 4×28 | - |
+| `logo_title.png` | ~400–600 wide | - |
+| `icon_trophy_scruffy.png` | ~120×80 | - |
+| `icon_trophy_sally.png` | ~120×80 | - |
+| `icon_trophy_smokey.png` | ~120×80 | - |
