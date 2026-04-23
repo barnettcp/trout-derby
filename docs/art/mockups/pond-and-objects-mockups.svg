@@ -24,7 +24,7 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      inkscape:zoom="0.71891835"
-     inkscape:cx="719.8314"
+     inkscape:cx="720.52689"
      inkscape:cy="344.26719"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -32,7 +32,8 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     showguides="false" />
+     showguides="false"
+     showgrid="false" />
   <defs
      id="defs1">
     <rect
@@ -50,17 +51,17 @@
        style="fill:#35a300;fill-opacity:1;stroke:#16db65;stroke-width:0.511878;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
        id="rect1"
        width="336.35538"
-       height="186.85268"
+       height="188.69283"
        x="0.80514288"
        y="0.77898753"
        ry="0.26066285"
        inkscape:label="Grass" />
     <path
        style="fill:#2cb7d8;fill-opacity:1;stroke:none;stroke-width:0.509029;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
-       d="m 149.0259,40.567417 -46.08516,31.47279 -4.496114,64.818963 38.222074,4.09354 33.71574,31.50068 58.82414,-39.71566 14.22299,-31.88231 1.13872,-56.915917 -46.8345,4.496115 z"
+       d="m 149.48958,39.6875 -46.30208,33.072916 -3.968751,64.822914 37.041671,2.64584 34.39583,31.74999 41.01041,-13.22916 21.16667,-26.45833 11.90625,-31.75 -3.96875,-27.781254 3.96875,-29.104166 -47.00579,4.779368 z"
        id="path1"
        inkscape:label="Pond"
-       sodipodi:nodetypes="cccccccccc" />
+       sodipodi:nodetypes="cccccccccccc" />
     <rect
        style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.242692;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
        id="rect2"
@@ -98,13 +99,13 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.44502912,0,0,0.44502912,98.478964,-10.668009)"
+       transform="matrix(0.44502912,0,0,0.44502912,105.77144,-10.668009)"
        id="text6"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.4396px;font-family:'Gill Sans Ultra Bold Condensed';-inkscape-font-specification:'Gill Sans Ultra Bold Condensed, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);display:inline;fill:#dc1717;fill-opacity:1;stroke:#3e090d;stroke-width:0.755906;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.4396px;font-family:Silkscreen;-inkscape-font-specification:'Silkscreen, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);display:inline;fill:#dc1717;fill-opacity:1;stroke:#3e090d;stroke-width:0.755906;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
        inkscape:label="timer text"><tspan
          x="47.210938"
-         y="51.910888"
-         id="tspan1">Derby Timer: 5:16 remaining</tspan></text>
+         y="51.621581"
+         id="tspan1">5:16 remaining</tspan></text>
     <path
        style="fill:none;stroke:#e61717;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
        d="m 198.37787,176.3498 h 54.76875"
