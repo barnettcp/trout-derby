@@ -23,7 +23,7 @@ Primary score is total fish caught.
 | Heaviest fish bonus | Extra points for the heaviest catch | Yes | +1 |
 | Trophy fish bonus | Extra points for catching a trophy | Yes | +3 |
 
-> **Tiebreaker rule:** If players tie (only applicable to Longest or Heaviest), the score modifier is given equally to all players who are tying. This means sharing an achievement is to be celebrated together rather than leaving regret for not being an outright winner.
+> **Tiebreaker rule:** If players tie (only applicable to Longest, Shortest, or Heaviest), the score modifier is given equally to all players who are tying. This means sharing an achievement is to be celebrated together rather than leaving regret for not being an outright winner.
 
 ---
 

@@ -23,15 +23,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     inkscape:zoom="8.1336329"
-     inkscape:cx="1362.3678"
-     inkscape:cy="0.30736573"
+     inkscape:zoom="2.8756735"
+     inkscape:cx="1497.5622"
+     inkscape:cy="37.382547"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g9"
+     inkscape:current-layer="layer5"
      showguides="false"
      showgrid="true">
     <inkscape:grid
@@ -122,7 +122,7 @@
        inkscape:label="timer text"><tspan
          x="47.210938"
          y="51.621581"
-         id="tspan2">5:16 remaining</tspan></text>
+         id="tspan1">5:16 remaining</tspan></text>
     <path
        style="fill:none;stroke:#e61717;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
        d="m 198.37787,176.3498 h 54.76875"
@@ -145,6 +145,41 @@
        x="4.8070683"
        y="4.8070683"
        inkscape:label="Safety Box" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="icon_bite_alert"
+     inkscape:export-filename="icon_bite_alert.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.332624;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="rect8"
+       width="8.1340418"
+       height="8.1340427"
+       x="375.70831"
+       y="0.52916664"
+       inkscape:label="32 x 32 reference" />
+    <path
+       sodipodi:type="star"
+       style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="path10"
+       inkscape:flatsided="false"
+       sodipodi:sides="7"
+       sodipodi:cx="377.29581"
+       sodipodi:cy="2.3812499"
+       sodipodi:r1="2.8619063"
+       sodipodi:r2="1.4309531"
+       sodipodi:arg1="2.1587989"
+       sodipodi:arg2="2.6075979"
+       inkscape:rounded="-3.469447e-18"
+       inkscape:randomized="2.7755576e-17"
+       d="m 375.70831,4.7624999 0.35576,-1.6529292 -1.61979,-0.4847931 1.51413,-0.7524378 -0.6309,-1.56866584 1.53232,0.71465464 0.83308,-1.47130123 0.39665,1.64359753 1.66972,-0.26601673 -1.03771,1.33487793 1.24904,1.1395838 -1.69066,0.020968 -0.1122,1.6870545 -1.07049,-1.3087312 z"
+       inkscape:transform-center-x="-0.84229632"
+       inkscape:transform-center-y="-0.12456494"
+       transform="matrix(1.3280064,0,0,1.352568,-121.32437,1.5330578)"
+       inkscape:label="icon" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -172,18 +207,6 @@
        inkscape:label="icon"
        sodipodi:nodetypes="ccccccccccccccccc" />
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76113px;font-family:Silkscreen;-inkscape-font-specification:'Silkscreen, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#3e090d;stroke:#c20000;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:0.5;fill-opacity:1"
-     x="359.06107"
-     y="-2.2120087"
-     id="text5"
-     inkscape:label="icons label"><tspan
-       sodipodi:role="line"
-       id="tspan5"
-       style="stroke-width:0.264583;fill:#3e090d;fill-opacity:1"
-       x="359.06107"
-       y="-2.2120087">icons</tspan></text>
   <g
      inkscape:groupmode="layer"
      id="g9"
@@ -213,5 +236,55 @@
        inkscape:export-ydpi="96"
        inkscape:label="icon"
        sodipodi:nodetypes="ccccccccccccccccc" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76113px;font-family:Silkscreen;-inkscape-font-specification:'Silkscreen, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#3e090d;stroke:#c20000;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:0.5;fill-opacity:1"
+     x="359.06107"
+     y="-2.2120087"
+     id="text5"
+     inkscape:label="icons label"><tspan
+       sodipodi:role="line"
+       id="tspan10">icons and sprites</tspan></text>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="sprite_player"
+     inkscape:export-filename="sprite_player.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"
+     transform="translate(-9.2604109)">
+    <rect
+       style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.119261;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="rect10"
+       width="8.4666662"
+       height="4.7624998"
+       x="397.40414"
+       y="1.852083"
+       inkscape:label="body" />
+    <circle
+       style="fill:#d4b820;fill-opacity:1;stroke:none;stroke-width:0.211753;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="path11"
+       cx="401.63748"
+       cy="3.96875"
+       r="1.8520833"
+       inkscape:label="head" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="sprite_fishing_rod"
+     inkscape:export-filename="sprite_fishing_rod.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"
+     transform="translate(-10.847913,-0.79375025)">
+    <rect
+       style="fill:#3e090d;fill-opacity:1;stroke:none;stroke-width:0.238359;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="rect11"
+       width="1.0583333"
+       height="7.4083333"
+       x="411.42706"
+       y="2.645833"
+       inkscape:label="rod" />
   </g>
 </svg>

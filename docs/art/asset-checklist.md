@@ -8,7 +8,7 @@ Name files using `snake_case` with a type prefix per the [Style Guide](style-gui
 
 ## Icons
 
-### `icon_fish_standard.png` — 20×20 px (Prototype Version Done. Consider cleanup in Krita)
+### `icon_fish_standard.png` — 20×20 px
 - [x] Closed-path fish silhouette in a single flat color — cream `#FFF0D0` reads well against the brown HUD panel
 - [ ] Optional: tiny dot eye; skip if it looks muddy at 20px
 - [x] Enable 1px pixel grid (View > Show/Hide > Page Grid) and snap to grid so edges land on whole pixels — prevents blurring on import
@@ -23,22 +23,21 @@ Name files using `snake_case` with a type prefix per the [Style Guide](style-gui
 ---
 
 ### `icon_bite_alert.png` — 32×32 px
-- [ ] Starburst / comic-explosion shape: central circle with 6–8 pointed spikes radiating outward; keep spikes fat enough to read at 32px
-- [ ] Solid fill `#F3DB34`; no outline needed — a clean silhouette reads better on varied backgrounds
-- [ ] Leave 1–2px of transparent padding inside the 32×32 canvas so Godot's scale-in tween doesn't clip the edges
+- [x] Starburst / comic-explosion shape: central circle with 6–8 pointed spikes radiating outward; keep spikes fat enough to read at 32px
+- [x] Solid fill `#F3DB34`; no outline needed — a clean silhouette reads better on varied backgrounds
+- [x] Leave 1–2px of transparent padding inside the 32×32 canvas so Godot's scale-in tween doesn't clip the edges
 - [ ] Godot handles all animation (scale and fade); this is a static image only
 
 ---
 
 ## Sprites
 
-### `sprite_player.png` — ~32×52 px canvas (body + rod pointing up)
+### `sprite_player.png` — ~32×18 px canvas
 For the prototype, make one **facing-up** sprite and let Godot rotate it. Four directional sprites can be revisited later.
 
-- [ ] Body: 32×20 px landscape rectangle, warm yellow `#F3DB34`
-- [ ] Head: 14px-diameter circle, slightly darker yellow `#D4B820`; centered horizontally, offset 2px toward the top (front) edge of the body
-- [ ] Rod: 4×28 px dark-red rectangle (`#3E090D`) extending upward from the top-center of the body — either include it here or export it as a separate file (see below); separate is more flexible
-- [ ] Transparent background; canvas tall enough to contain body + rod without clipping (~32×52 px with rod)
+- [x] Body: 32×18 px landscape rectangle, warm yellow `#F3DB34`
+- [x] Head: 14px-diameter circle, slightly darker yellow `#D4B820`; centered horizontally, offset 2px toward the top (front) edge of the body
+- [n/a] Transparent background; canvas tall enough to contain body + rod without clipping
 - [ ] If you later go with 4 directional sprites, rename to `sprite_player_up.png`, `sprite_player_down.png`, etc.
 
 ---
@@ -46,9 +45,9 @@ For the prototype, make one **facing-up** sprite and let Godot rotate it. Four d
 ### `sprite_fishing_rod.png` — 4×28 px
 Keeping the rod separate from the player sprite lets Godot rotate it independently for casting direction.
 
-- [ ] Thin rectangle, dark red `#3E090D`
-- [ ] At 4px wide, snap coordinates to whole pixels and disable anti-aliasing on the path to avoid blurring on export
-- [ ] Transparent background
+- [x] Rod: 4×28 px dark-red rectangle (`#3E090D`) extending upward from the top-center of the body — either include it here or export it as a separate file (see below); separate is more flexible
+- [x] At 4px wide, snap coordinates to whole pixels and disable anti-aliasing on the path to avoid blurring on export
+- [x] Transparent background
 
 ---
 
@@ -63,9 +62,20 @@ Keeping the rod separate from the player sprite lets Godot rotate it independent
 
 ---
 
+## Fish Portraits
+
+Small illustrations shown in the catch popup, centered above the fish's stats. Suggested size ~120×80 px to fit the 280×216 popup panel. Trophy fish use their own unique portrait (see Trophy Fish Portraits below); standard catches display the species portrait.
+
+### `icon_rainbow_trout.png`
+- [ ] Rainbow trout silhouette
+- [ ] Reasonably realistic colors
+- [ ] A few small spots on back and tail
+
+---
+
 ## Trophy Fish Portraits (low priority — placeholder rects are fine for the first pass)
 
-Small illustrations shown in the catch popup. Suggested size ~120×80 px; adjust to fit the 280×128 popup panel.
+Unique portraits shown in the catch popup in place of the standard species portrait when a trophy fish is caught. Suggested size ~120×80 px to fit the 280×216 popup panel.
 
 ### `icon_trophy_scruffy.png`
 - [ ] Rainbow trout silhouette with a tiny drawn-on moustache (`#3E090D`)
@@ -85,12 +95,13 @@ Small illustrations shown in the catch popup. Suggested size ~120×80 px; adjust
 
 | File | Size | Status |
 |---|---|---|
-| `icon_fish_standard.png` | 20×20 | - |
-| `icon_fish_trophy.png` | 20×20 | - |
-| `icon_bite_alert.png` | 32×32 | - |
-| `sprite_player.png` | ~32×52 | - |
-| `sprite_fishing_rod.png` | 4×28 | - |
+| `icon_fish_standard.png` | 20×20 | prototype done |
+| `icon_fish_trophy.png` | 20×20 | prototype done |
+| `icon_bite_alert.png` | 32×32 | prototype done |
+| `sprite_player.png` | 32×18 | prototype done |
+| `sprite_fishing_rod.png` | 4×28 | prototype done |
 | `logo_title.png` | ~400–600 wide | - |
+| `icon_rainbow_trout.png` | ~120×80 | - |
 | `icon_trophy_scruffy.png` | ~120×80 | - |
 | `icon_trophy_sally.png` | ~120×80 | - |
 | `icon_trophy_smokey.png` | ~120×80 | - |

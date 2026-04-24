@@ -14,7 +14,7 @@
 - **Score box** (top left) — fish count label + icon grid filling left to right, 5 per row; trophy catches use a gold icon variant
 - **Cast power bar** (world-space, near player) — hold-to-charge fill bar appears when player holds cast; fills left to right green → yellow → red; disappears on release and bobber launches
 - **Bite alert** (world-space, near bobber) — yellow spiked burst icon appears when fish bites; fades over 1s; player must set hook within the hook window
-- **Catch popup** (left center, HUD) — appears after a successful catch; shows species, length, weight, and a "TROPHY" badge if applicable; fades after 2s
+- **Catch popup** (left center, HUD) — appears after a successful catch; shows a fish portrait (centered top), species, length, weight, rounds since last caught, and a “TROPHY” badge if applicable; fades after 2s
 
 ### Scoreboard / End of Round
 - Shown when derby timer expires
@@ -38,7 +38,7 @@ All measurements in pixels at base resolution 1280×720. Fixed HUD elements live
 |---|---|---|---|---|---|
 | Derby Timer | Top center — x=640, y=16; anchor: top-center | 200×56 | Silkscreen Bold, 40px | bg `#7C4A2A`, text `#FFF0D0` | Countdown MM:SS format |
 | Score Box | Top left — x=16, y=16 | 160×auto | Silkscreen Regular, 14px | bg `#7C4A2A`, text `#FFF0D0` | "Fish: 3" count label at top; icons 20×20px, 5 per row, 4px gap; gold icon for trophy catches; starts at 2 rows (10 slots); a new row of 5 appends automatically for each additional 5 fish caught |
-| Catch Popup | Left center — x=16, y=296 | 280×128 | Fredoka Medium 18px (headline), Silkscreen Regular 14px (stats) | bg `#7C4A2A`, text `#FFF0D0` | Shows species, length, weight; "TROPHY" badge if applicable; fades out after 2s; fixed position for prototype — if score box grows tall enough to overlap, revisit as dynamic offset below score box bottom + 8px gap |
+| Catch Popup | Left center — x=16, y=296 | 280×216 | Fredoka Medium 18px (headline), Silkscreen Regular 14px (stats) | bg `#7C4A2A`, text `#FFF0D0` | Portrait (~120×80) centered at top with 8px padding; species name below; stats: length, weight, rounds since last caught; “TROPHY” badge if applicable; fades out after 2s; fixed position for prototype — if score box grows tall enough to overlap, revisit as dynamic offset below score box bottom + 8px gap |
 
 ### World-Space Elements (Main Scene)
 
@@ -62,6 +62,7 @@ All measurements in pixels at base resolution 1280×720. Fixed HUD elements live
 | Bite alert burst icon | Inkscape | Static image; Godot animates scale/fade via tween |
 | Player sprite | Inkscape | Static image |
 | Fish sprites | Inkscape | Static images (hidden at runtime; fish are invisible in prototype) |
+| Fish portraits (species + trophy) | Inkscape | Static images shown in catch popup |
 | Game logo / title art | Inkscape | Static image |
 | Button / panel backgrounds | Godot (`StyleBoxFlat`) | Simple shapes; no need to leave Godot |
 | Derby timer label | Godot (`Label`) | Updates every second |
