@@ -23,17 +23,33 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     inkscape:zoom="0.71891835"
-     inkscape:cx="720.52689"
-     inkscape:cy="344.26719"
+     inkscape:zoom="8.1336329"
+     inkscape:cx="1362.3678"
+     inkscape:cy="0.30736573"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g9"
      showguides="false"
-     showgrid="false" />
+     showgrid="true">
+    <inkscape:grid
+       id="grid5"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="0.26458333"
+       spacingy="0.26458333"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="false"
+       snapvisiblegridlinesonly="false" />
+  </sodipodi:namedview>
   <defs
      id="defs1">
     <rect
@@ -44,17 +60,18 @@
        id="rect6" />
   </defs>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="UI Reference"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     sodipodi:insensitive="true">
     <rect
-       style="fill:#35a300;fill-opacity:1;stroke:#16db65;stroke-width:0.511878;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
+       style="fill:#35a300;fill-opacity:1;stroke:#16db65;stroke-width:0.515382;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
        id="rect1"
-       width="336.35538"
-       height="188.69283"
-       x="0.80514288"
-       y="0.77898753"
-       ry="0.26066285"
+       width="338.65805"
+       height="189.98462"
+       x="0.257691"
+       y="0.257691"
+       ry="0.26244736"
        inkscape:label="Grass" />
     <path
        style="fill:#2cb7d8;fill-opacity:1;stroke:none;stroke-width:0.509029;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928"
@@ -105,7 +122,7 @@
        inkscape:label="timer text"><tspan
          x="47.210938"
          y="51.621581"
-         id="tspan1">5:16 remaining</tspan></text>
+         id="tspan2">5:16 remaining</tspan></text>
     <path
        style="fill:none;stroke:#e61717;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:1"
        d="m 198.37787,176.3498 h 54.76875"
@@ -120,5 +137,81 @@
        x="97.773842"
        y="99.82457"
        inkscape:label="rod" />
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:1.14747;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:14.5928;stroke-opacity:0.5"
+       id="rect4"
+       width="329.05255"
+       height="180.88586"
+       x="4.8070683"
+       y="4.8070683"
+       inkscape:label="Safety Box" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="icon_fish_standard">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.262302;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="rect5"
+       width="5.2916665"
+       height="5.2916665"
+       x="357.1875"
+       y="1.3229166"
+       inkscape:label="20 x 20 reference"
+       ry="0"
+       inkscape:export-filename="icon_fish_standard.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path8"
+       style="fill:#fff0dd;fill-opacity:1;stroke:none;stroke-width:0.302574;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:0.5"
+       d="m 360.36256,1.4552083 -0.26458,1e-7 -0.43121,0.7937498 -0.098,0.5291667 -0.26454,0.2645833 -8e-5,0.9260416 h 0.26458 v 0.7937499 l 0.26467,0.6614583 -0.52925,1.0339364 0.89258,-0.1588842 0.94198,0.1832814 -0.64425,-1.0583336 0.39719,-0.9294849 V 3.5718748 2.7781249 Z"
+       inkscape:export-filename="icon_fish_standard.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:label="icon"
+       sodipodi:nodetypes="ccccccccccccccccc" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76113px;font-family:Silkscreen;-inkscape-font-specification:'Silkscreen, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#3e090d;stroke:#c20000;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:0.5;fill-opacity:1"
+     x="359.06107"
+     y="-2.2120087"
+     id="text5"
+     inkscape:label="icons label"><tspan
+       sodipodi:role="line"
+       id="tspan5"
+       style="stroke-width:0.264583;fill:#3e090d;fill-opacity:1"
+       x="359.06107"
+       y="-2.2120087">icons</tspan></text>
+  <g
+     inkscape:groupmode="layer"
+     id="g9"
+     inkscape:label="icon_fish_trophy"
+     transform="translate(7.1437543,-0.13229168)"
+     inkscape:export-filename="icon_fish_trophy.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.262302;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:1"
+       id="rect7"
+       width="5.2916665"
+       height="5.2916665"
+       x="357.1875"
+       y="1.3229166"
+       inkscape:label="20 x 20 reference"
+       ry="0"
+       inkscape:export-filename="icon_fish_standard.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path9"
+       style="fill:#f3db34;fill-opacity:1;stroke:none;stroke-width:0.302574;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:14.5928;stroke-opacity:0.5"
+       d="m 360.36256,1.4552083 -0.26458,1e-7 -0.43121,0.7937498 -0.098,0.5291667 -0.26454,0.2645833 -8e-5,0.9260416 h 0.26458 v 0.7937499 l 0.26467,0.6614583 -0.52925,1.0339364 0.89258,-0.1588842 0.94198,0.1832814 -0.64425,-1.0583336 0.39719,-0.9294849 V 3.5718748 2.7781249 Z"
+       inkscape:export-filename="icon_fish_standard.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:label="icon"
+       sodipodi:nodetypes="ccccccccccccccccc" />
   </g>
 </svg>

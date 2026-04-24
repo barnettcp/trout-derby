@@ -8,17 +8,17 @@ Name files using `snake_case` with a type prefix per the [Style Guide](style-gui
 
 ## Icons
 
-### `icon_fish_standard.png` — 20×20 px
-- [ ] Closed-path fish silhouette in a single flat color — cream `#FFF0D0` reads well against the brown HUD panel
+### `icon_fish_standard.png` — 20×20 px (Prototype Version Done. Consider cleanup in Krita)
+- [x] Closed-path fish silhouette in a single flat color — cream `#FFF0D0` reads well against the brown HUD panel
 - [ ] Optional: tiny dot eye; skip if it looks muddy at 20px
-- [ ] Enable 1px pixel grid (View > Show/Hide > Page Grid) and snap to grid so edges land on whole pixels — prevents blurring on import
+- [x] Enable 1px pixel grid (View > Show/Hide > Page Grid) and snap to grid so edges land on whole pixels — prevents blurring on import
 
 ---
 
 ### `icon_fish_trophy.png` — 20×20 px
-- [ ] Same silhouette shape as `icon_fish_standard`; recolor fill to gold (`#F3DB34` or `#D4B820`)
+- [x] Same silhouette shape as `icon_fish_standard`; recolor fill to gold `#F3DB34`
 - [ ] Optional subtle star or sparkle overlay to distinguish it at a glance — keep it readable at 20px
-- [ ] Export as a separate file (not a layer toggle)
+- [x] Export as a separate file (not a layer toggle)
 
 ---
 
