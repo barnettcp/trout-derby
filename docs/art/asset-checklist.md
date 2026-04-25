@@ -51,6 +51,17 @@ Keeping the rod separate from the player sprite lets Godot rotate it independent
 
 ---
 
+### `sprite_bobber.png` — 8×8 px
+The bobber that sits in the water after a cast. Godot positions it in world-space and drives its scale during the cast arc.
+
+- [ ] 8px-diameter circle — top half `#DC1717` (red), bottom half `#FFFFFF` (white)
+- [ ] Draw two filled semicircles sharing a flat edge across the center; a 1px dark dividing line (`#3E090D`) between halves reads well at this size
+- [ ] Transparent background; canvas is exactly 8×8 px
+- [ ] Snap to pixel grid — at 8px any sub-pixel edge will visibly blur on import
+- [ ] Godot handles all animation (cast arc scale, idle bob, dip on bite); this is a static image only
+
+---
+
 ## UI / Branding
 
 ### Game logo / title art — width ~400–600 px (finalize in mockup)
@@ -100,6 +111,7 @@ Unique portraits shown in the catch popup in place of the standard species portr
 | `icon_bite_alert.png` | 32×32 | prototype done |
 | `sprite_player.png` | 32×18 | prototype done |
 | `sprite_fishing_rod.png` | 4×28 | prototype done |
+| `sprite_bobber.png` | 8×8 | - |
 | `logo_title.png` | ~400–600 wide | - |
 | `icon_rainbow_trout.png` | ~120×80 | - |
 | `icon_trophy_scruffy.png` | ~120×80 | - |

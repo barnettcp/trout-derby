@@ -36,6 +36,7 @@ Generally aim for bright and cheerful colors. Subject to change with development
 - Facing direction: 4-directional (up / down / left / right); player snaps to cardinal directions on movement
 - Rod extends from the front edge of the body, pointing in the facing direction
 - Casting arc: forward-facing 150° only (75° each side); cursor positions outside the arc are clamped to the nearest boundary
+- Sprite direction: single **facing-up** sprite; Godot rotates it to match the current cardinal direction. One `Sprite2D` rotation per frame is negligible overhead and is the standard approach for this scale of game. Four directional sprites are not needed.
 
 ### Character and Element Sizes
 
