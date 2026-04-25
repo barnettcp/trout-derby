@@ -7,22 +7,22 @@ The vibe should be a mix of casual, and very casual. A player should come back t
 
 ## Core Loop
 - Player joins a derby round
-    - Prototype: The derby round begins when the player joins
+    - Prototype: Player presses "Join Derby" → 10-second countdown → derby begins
     - Final Game: The derby round happens on a fixed timer and the player can join an in-progress derby, with no adjustment to scoring. They would then participate fully in the next derby.
 - Move around the pond as desired, cast into the water where they think there might be fish
 - Wait for a bite, set the hook, reel in the fish
-- Or, alternatively, reel the line in and re-cast elsewhere
+- Or, alternatively, recall the bobber and re-cast elsewhere
 - Catch, cast, move, and repeat until the derby timer expires
-- Derby summary: Tally score, distribute awards, re-stock fish
+- Derby summary: Tally score, distribute awards; 1-minute break before next derby; fish re-stocked for the next round
 
 ## Controls
-- Player Movement: 
-    - WASD / arrow keys for itch.io
-    - Simple 
-- Cast direction: As the player moves the character around, the mouse moves around the cursor to determine the casting direction.
-- Cast distance: The user sees a hold and release power bar, with 100% meaning a full-distance cast and 0% meaning no cast.
-- Hook set: When a fish bites, there is a short-yet-doable reaction window for the user to set the hook. This is done with a double-click (mouse/keyboard) or long-press (mobile)
-- Reeling: The user begins reeling by clicking the mouse or a long-press and holding 
+- Player Movement: WASD / arrow keys; player snaps to 4 cardinal directions
+- Cast direction: Player faces a cardinal direction; the mouse cursor determines cast angle within a 150° forward arc
+- Cast distance: Hold left-click or Space to charge a power bar (fills in 1 s); release to fire at that distance
+- Recall bobber: Single left-click or Space while bobber is in the water; 0.5 s cooldown before next cast
+- Hook set: Single left-click or Space within the 1-second bite window after a fish bites
+- Reeling: Automatic — fish is reeled in over 2 seconds after a successful hook set; no additional input required
+- Mobile controls: TBD — deferred to final game
 
 ## Scope
 
@@ -56,5 +56,6 @@ The final game is intended to be a casual passtime: a game that one would play o
 - [Data Models](technical/data-models.md)
 - [Style Guide](art/style-guide.md)
 - [UI Layout](art/ui-layout.md)
+- [Asset Checklist](art/asset-checklist.md)
 - [Prototype Milestone](milestones/prototype.md)
 - [Final Game Milestone](milestones/final-game.md)

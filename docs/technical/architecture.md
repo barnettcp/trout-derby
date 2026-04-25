@@ -43,9 +43,10 @@ trout-derby/                         # repo root
 ├── docs/
 ├── tools/                           # Data pipeline — outside Godot project
 │   ├── fish_pool.csv                # Source of truth — hand-authored, edit here
-│   ├── generate_fish.py             # Reads CSV, rolls unset attributes, writes fish_data.json
+│   ├── generate_fish_json.py        # Reads CSV, rolls unset attributes, writes fish_data.json
 │   └── notebooks/
-│       └── fish_simulation.ipynb    # For tuning distributions and visualizing behavior
+│       ├── generate_fish.ipynb      # Simulate distributions, generate fish_pool.csv
+│       └── pond_editor.ipynb        # Place pond vertices, visualize, export pond_data.json
 └── project/                         # Godot project root
     ├── scenes/
     │   ├── main.tscn

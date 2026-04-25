@@ -5,8 +5,8 @@
 Fish {
   id: int
   species: string
-  length: float          # inches, normally distributed
-  weight: float          # pounds, normally distributed
+  length: float          # inches, normally distributed (mean 12 in, std 2 in)
+  weight: float          # pounds, derived via power law: a * length^b (a=0.00043, b=3.0)
   is_trophy: bool
   trophy_name: string    # null for standard fish
   trophy_title: string   # title granted to the player who catches this fish; null for standard fish

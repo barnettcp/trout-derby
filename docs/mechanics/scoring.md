@@ -54,5 +54,8 @@ No account creation required. Player identity is self-chosen name.
 
 1. Timer expires
 2. All active fishing lines are resolved or cancelled
-3. Scoreboard displayed with rankings and awards
-4. Transition to next round or lobby
+3. Scoreboard / summary screen appears with rankings and awards
+4. A **1-minute countdown** to the next derby begins immediately
+5. Player may dismiss the summary at any time and walk around the pond while waiting
+6. Summary **auto-closes** when 10 seconds remain until the next derby
+7. Next derby begins (loops back to step 1)

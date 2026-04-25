@@ -2,14 +2,14 @@
 
 ## Standard Fish
 
-All standard fish are trout. Each fish rolls its own length and weight at spawn from a normal distribution. Fish are persistent across rounds — returned to the pond after each derby with their catch history intact.
+All standard fish are trout. Length is normally distributed; weight is derived from length using a power law. Fish are persistent across rounds — returned to the pond after each derby with their catch history intact.
 
 ### Standard Fish Attributes
 
 | Attribute | Distribution | Mean | Std Dev | Notes |
 |---|---|---|---|---|
 | Length | Normal | 12 in | 2 in | Manually add a few bigger/smaller ones as needed |
-| Weight | Normal | 0.05 lbs/in | 0.01 lbs/in | Pounds per inch. Simulate, then apply to fish length  |
+| Weight | Power law: `a × length^b` | ~0.74 lb at 12 in | ±8% noise (multiplicative) | `a=0.00043`, `b=3.0`; generates naturally heavier fish at longer lengths |
 | Rounds Since Caught | Tracked | — | — | Persisted across rounds; 0 if caught this round |
 
 ## Trophy Fish

@@ -42,7 +42,7 @@ Generally aim for bright and cheerful colors. Subject to change with development
 
 | Element | Width | Height | Notes |
 |---|---|---|---|
-| Player body | 32px | 20px | Landscape rectangle in top-down view; "width" is side-to-side, "height" is front-to-back |
+| Player body | 32px | 18px | Landscape rectangle in top-down view; "width" is side-to-side, "height" is front-to-back |
 | Player head | 14px diameter | — | Circle; centered side-to-side, offset 2px toward front edge of body |
 | Fishing rod | 4px | 28px | Thin rectangle; extends from front edge center in facing direction; rotated in-engine |
 | Bobber | 8px diameter | — | Circle, red/white split |

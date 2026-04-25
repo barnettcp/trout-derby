@@ -16,19 +16,21 @@ Playable single-player fishing game with one pond, a full fishing loop, and a de
 - [ ] Collision boundary so player cannot enter water
 
 ### Player
-- [ ] Square block character with directional indicator
-- [ ] WASD/arrow movement
+- [ ] Rectangular block character (32×18 px body) with round head; single sprite rotated by Godot
+- [ ] WASD/arrow movement at 1.1 m/s (~17 px/s); snaps to 4 cardinal directions
 - [ ] Collision with pond boundary
 
 ### Fishing
-- [ ] Cursor-based cast direction
-- [ ] Timing-based cast distance (hold and release)
+- [ ] Cursor-based cast direction within 150° forward arc
+- [ ] Timing-based cast distance (hold and release, 1 s fill)
+- [ ] Bobber arc animation (parabolic: sine-driven scale, peaks at 1.5× at midpoint)
 - [ ] Bobber placement in water
 - [ ] Line drawn from rod to bobber
+- [ ] Recall bobber input (click/Space; 0.5 s cooldown)
 - [ ] Bite detection (proximity to fish)
 - [ ] Bite visual/audio cue
-- [ ] Hook reaction window
-- [ ] Fish caught on successful hook
+- [ ] Hook reaction window (1 s)
+- [ ] Fish caught on successful hook; auto-reel over 2 s
 
 ### Fish
 - [ ] Fish spawner with configurable count
@@ -40,14 +42,16 @@ Playable single-player fishing game with one pond, a full fishing loop, and a de
 
 ### Derby
 - [ ] Configurable round timer (2 or 5 min)
+- [ ] 10-second pre-derby countdown overlay
 - [ ] Round start and end flow
 - [ ] Score tally at end
+- [ ] 1-minute between-derby countdown; dismissible summary; auto-close at 10 s remaining
 
 ### UI
-- [ ] Main menu (start button, timer config)
+- [ ] Main menu ("Join Derby" primary button, settings, exit)
 - [ ] In-game HUD (timer, fish count)
-- [ ] End-of-round scoreboard
-- [ ] Catch notification popup
+- [ ] End-of-round scoreboard with awards
+- [ ] Catch notification popup (portrait, species, length, weight, rounds since caught)
 
 ### Audio
 - [ ] Cast sound
