@@ -21,8 +21,8 @@ The vibe should be a mix of casual, and very casual. A player should come back t
 - Cast distance: Hold left-click or Space to charge a power bar (fills in 1 s); release to fire at that distance
 - Recall bobber: Single left-click or Space while bobber is in the water; 0.5 s cooldown before next cast
 - Hook set: Single left-click or Space within the 1-second bite window after a fish bites
-- Reeling: Automatic — fish is reeled in over 2 seconds after a successful hook set; no additional input required
-- Mobile controls: TBD — deferred to final game
+- Reeling: Automatic. Fish is reeled in over 2 seconds after a successful hook set; no additional input required
+- Mobile controls: TBD. Deferred to final game
 
 ## Scope
 

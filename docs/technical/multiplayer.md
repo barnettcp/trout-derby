@@ -2,6 +2,10 @@
 
 *This document covers the final game milestone. Multiplayer is not required for the prototype.*
 
+Multiplayer is the ultimate goal of this game - it should feel light and casual, but also is more fun if people can join a derby with their friends. Initially, I'm not going to worry about scaling as it is a problem that I would like to have, but not one to solve for early. If 100 people want to fish in the pond and have an expected catch of 0.5 fish per player, good for them! At that point it would be worthwhile to examine better approaches.
+
+If scaling is a problem, we could have multiple concurrent derby "rooms" (servrs) that users could join. Also, it could be nice to have users able to generate a private derby that is sharable via some sort of Alpha or Alphanumeric code (e.g. HXCZYJ.. or whatever) and join a room with their friends. Since fish exist in the same way across all derbies, all awards and statistics are applicable regardless of the room type.
+
 ---
 
 ## Network Model — *Decision Required*
