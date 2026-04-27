@@ -9,7 +9,7 @@
 
 | Variable | Description | Value |
 |---|---|---|
-| Fish Count | Total fish in the pond per round | 50 |
+| Fish Count | Total fish in the pond per round | 120 |
 
 ---
 
@@ -19,9 +19,9 @@ Fish move in discrete ticks (not continuous). Each tick, a fish chooses a new he
 
 ### Movement Trigger — *Decided*
 
-Each fish has its own independent `Timer` node. On timeout, the fish moves, then the timer restarts. Interval is assigned per fish at spawn from the range below.
+Each fish has its own independent `Timer` node. On timeout, the fish moves, then the timer restarts. Interval is a pre-rolled attribute stored on each fish, generated in `generate_fish.ipynb` and loaded from `fish_data.json`.
 
-At 50 fish this is negligible overhead, and it allows per-fish personality variation (lazy vs. active fish) as a natural extension later.
+At 120 fish this is negligible overhead, and it allows per-fish personality variation (lazy vs. active fish) as a natural extension later.
 
 > **Selected:** Per-fish independent timer. Interval is a fish attribute assigned at spawn.
 
@@ -29,9 +29,9 @@ At 50 fish this is negligible overhead, and it allows per-fish personality varia
 
 | Variable | Description | Min | Max | Notes |
 |---|---|---|---|---|
-| Movement Tick Interval | Seconds between movement ticks | 5s | 45s | Assigned per fish at spawn; fish attribute |
+| Movement Tick Interval | Seconds between movement ticks | 4s | 30s | Pre-rolled attribute on each fish; stored in `fish_data.json` |
 | Move Distance | Distance traveled per tick | 0.3m | 1.0m | |
-| Turn Angle | Max heading change per tick | 0° | 140° | Relative to current orientation |
+| Turn Angle | Max heading change per tick | 0° | 110° | Relative to current orientation |
 
 *Movement and bite detection run on separate timers. Bite checks use a faster global timer so the player gets a responsive feel regardless of a fish's movement interval.*
 
@@ -54,6 +54,13 @@ Hand-placed zones that redirect fish away from edges or clusters. The logic per 
 
 > **Selected:** Option A. This feels like it could be made to be more organic through tuning and is not wildly difficult to implement.
 
+### Anti-Crowding Variables
+
+| Variable | Description | Value |
+|---|---|---|
+| Repulsion Radius | Distance within which fish push each other away | 2m |
+| Repulsion Strength | Influence weight of the repulsion vector (0 = none, 1 = strong) | 0.5 |
+
 ---
 
 ## Bite Behavior
@@ -62,11 +69,11 @@ A fish may bite when a bobber is within its bite radius. On a successful bite, t
 
 ### Bite Variables
 
-Bite check interval is a **per-fish attribute** assigned at spawn, giving each fish a distinct personality (eager vs. patient).
+Bite check interval is a **pre-rolled attribute** stored on each fish, giving each fish a distinct personality (eager vs. patient).
 
 | Variable | Description | Value | Notes |
 |---|---|---|---|
-| Bite Check Interval | Seconds between bite proximity checks | Gamma(α=2, θ=3), min 2s | Per-fish attribute; mean ~6s, mode ~3s; simulated in generate_fish.ipynb |
+| Bite Check Interval | Seconds between bite proximity checks | Gamma(α=2, θ=3), min 2s | Pre-rolled attribute on each fish; mean ~6s, mode ~3s; stored in `fish_data.json` |
 | Bite Radius | Distance from fish at which it may bite | 1m | |
 | Bite Chance | Probability of a bite attempt per check | 100% within 0.2m, linearly scales down to 20% at edge of radius | Distance factors in |
 | Hook Window | Seconds player has to set the hook | 1 second | |

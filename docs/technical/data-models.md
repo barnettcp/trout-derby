@@ -12,8 +12,8 @@ Fish {
   trophy_title: string   # title granted to the player who catches this fish; null for standard fish
   position: Vector2
   orientation: float     # degrees
-  movement_tick_interval: float   # seconds between movement ticks; assigned at spawn
-  bite_check_interval: float      # seconds between bite proximity checks; gamma(α=2, θ=3), min 2s
+  movement_tick_interval: float   # seconds between movement ticks; pre-rolled attribute, loaded from fish_data.json
+  bite_check_interval: float      # seconds between bite proximity checks; pre-rolled attribute, gamma(α=2, θ=3), min 2s; loaded from fish_data.json
   state: enum            # idle, moving, biting, hooked, caught
   bite_radius: float
   rounds_since_last_caught: int  # 0 if caught this round, increments each round; persisted across rounds
