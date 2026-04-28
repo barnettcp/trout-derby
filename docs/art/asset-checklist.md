@@ -89,12 +89,12 @@ Small illustrations shown in the catch popup, centered above the fish's stats. S
 Unique portraits shown in the catch popup in place of the standard species portrait when a trophy fish is caught. Suggested size ~120×80 px to fit the 280×216 popup panel.
 
 ### `icon_trophy_scruffy.png`
-- [ ] Rainbow trout silhouette with a tiny drawn-on moustache (`#3E090D`)
-- [ ] Transparent background
+- [x] Rainbow trout silhouette with a tiny drawn-on moustache (`#3E090D`)
+- [x] Transparent background
 
 ### `icon_trophy_sally.png`
-- [ ] Yellow/brown trout silhouette with a small bow or collar shape
-- [ ] Transparent background
+- [x] Rainbow trout silhouette with a dress (`#F3DB34`)
+- [x] Transparent background
 
 ### `icon_trophy_smokey.png`
 - [ ] Brook trout silhouette with a tiny pipe
@@ -114,6 +114,6 @@ Unique portraits shown in the catch popup in place of the standard species portr
 | `sprite_bobber.png` | 8×8 | prototype done |
 | `logo_title.png` | ~400–600 wide | prototype done |
 | `icon_rainbow_trout.png` | ~120×80 | prototype done |
-| `icon_trophy_scruffy.png` | ~120×80 | - |
-| `icon_trophy_sally.png` | ~120×80 | - |
+| `icon_trophy_scruffy.png` | ~120×80 | prototype done |
+| `icon_trophy_sally.png` | ~120×80 | prototype done |
 | `icon_trophy_smokey.png` | ~120×80 | - |
