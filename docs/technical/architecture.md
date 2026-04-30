@@ -70,8 +70,9 @@ trout-derby/                         # repo root
     │   ├── fish_spawner.gd
     │   └── ui/
     ├── assets/
-    │   ├── sprites/
     │   ├── audio/
+    │   ├── fonts/
+    │   ├── sprites/
     │   └── ui/              # Inkscape-exported SVGs/PNGs
     ├── data/
     │   ├── fish_data.json   # Generated — read by Godot at startup
