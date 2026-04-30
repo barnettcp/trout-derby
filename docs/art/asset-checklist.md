@@ -84,7 +84,7 @@ Small illustrations shown in the catch popup, centered above the fish's stats. S
 
 ---
 
-## Trophy Fish Portraits (low priority — placeholder rects are fine for the first pass)
+## Trophy Fish Portraits
 
 Unique portraits shown in the catch popup in place of the standard species portrait when a trophy fish is caught. Suggested size ~120×80 px to fit the 280×216 popup panel.
 
@@ -97,8 +97,8 @@ Unique portraits shown in the catch popup in place of the standard species portr
 - [x] Transparent background
 
 ### `icon_trophy_smokey.png`
-- [ ] Brook trout silhouette with a tiny pipe
-- [ ] Transparent background
+- [x] Brook trout silhouette with a tiny pipe
+- [x] Transparent background
 
 ---
 
@@ -116,4 +116,4 @@ Unique portraits shown in the catch popup in place of the standard species portr
 | `icon_rainbow_trout.png` | ~120×80 | prototype done |
 | `icon_trophy_scruffy.png` | ~120×80 | prototype done |
 | `icon_trophy_sally.png` | ~120×80 | prototype done |
-| `icon_trophy_smokey.png` | ~120×80 | - |
+| `icon_trophy_smokey.png` | ~120×80 | prototype done |
