@@ -52,9 +52,10 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 5 — Pond and Environment
 
-- [ ] Create pond `Polygon2D` from `pond_data.json` vertices
-- [ ] Green grass background (`ColorRect`), blue water fill
-- [ ] Collision boundary — player and fish cannot leave/enter pond respectively
+- [x] Create pond `Polygon2D` from `pond_data.json` vertices
+- [x] Green grass background (`ColorRect`), blue water fill
+- [x] Collision boundary (player and fish cannot leave/enter pond respectively)
+- [x] Set collision layer to 1, but no mask since the pond does not need to detect anything.
 
 ---
 

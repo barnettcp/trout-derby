@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://bbmfpfxr4wid4"]
 
+[ext_resource type="Script" uid="uid://dm417hah4qn50" path="res://scripts/pond.gd" id="1_4h7al"]
+
 [node name="Pond" type="Node2D" unique_id=633623421]
+script = ExtResource("1_4h7al")
+
+[node name="Grass" type="ColorRect" parent="." unique_id=477671625]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.20784314, 0.6392157, 0, 1)
+
+[node name="Water" type="Polygon2D" parent="." unique_id=752596885]
+color = Color(0.17254902, 0.7176471, 0.84705883, 1)
+
+[node name="PondBoundary" type="StaticBody2D" parent="." unique_id=2057400986]
+collision_mask = 0
+
+[node name="BoundaryShape" type="CollisionPolygon2D" parent="PondBoundary" unique_id=312012812]
