@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://dvrc4km6o80em"]
 
+[ext_resource type="Texture2D" uid="uid://ckncpeq1lccfc" path="res://assets/sprites/sprite_bobber.png" id="1_2wku4"]
+[ext_resource type="Script" uid="uid://cjkvdraimsbai" path="res://scripts/bobber.gd" id="1_rn3pg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2wku4"]
+radius = 4.0
+
 [node name="Bobber" type="Area2D" unique_id=775437942]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_rn3pg")
+
+[node name="BobberSprite" type="Sprite2D" parent="." unique_id=50874714]
+texture_filter = 1
+texture = ExtResource("1_2wku4")
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=1544653917]
+shape = SubResource("CircleShape2D_2wku4")

@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://bqt64ncoihmtx"]
 
+[ext_resource type="Texture2D" uid="uid://bvf357f0javhl" path="res://assets/sprites/sprite_fishing_rod.png" id="1_g433l"]
+[ext_resource type="Script" uid="uid://dpixdqpin0stc" path="res://scripts/fishing_rod.gd" id="1_h4s14"]
+
 [node name="FishingRod" type="Node2D" unique_id=1249327479]
+script = ExtResource("1_h4s14")
+
+[node name="RodSprite" type="Sprite2D" parent="." unique_id=356339035]
+texture_filter = 1
+texture = ExtResource("1_g433l")
+offset = Vector2(0, -14)
+
+[node name="RodTip" type="Marker2D" parent="." unique_id=916772864]
+position = Vector2(0, -28)

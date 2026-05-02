@@ -71,12 +71,12 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 7 — Fishing Rod and Bobber
 
-- [ ] Rod sprite attached to player, rotates to face cursor direction within 150° arc
-- [ ] Cast power bar (hold to charge, release to fire) — built in Godot, no art asset needed
-- [ ] Bobber arc animation (sine-driven scale over 0.5 s travel)
-- [ ] Bobber placement validates water landing; fails gracefully on land
-- [ ] Fishing line drawn from rod tip to bobber
-- [ ] Recall input (single click / Space, 0.5 s cooldown)
+- [x] Rod sprite attached to player, rotates to face cursor direction within 150° arc
+- [x] Cast power bar (hold to charge, release to fire) — built in Godot, no art asset needed
+- [x] Bobber arc animation (sine-driven scale over 0.5 s travel)
+- [x] Bobber placement validates water landing; fails gracefully on land
+- [x] Fishing line drawn from rod tip to bobber
+- [x] Recall input (single click / Space, 0.5 s cooldown)
 
 ---
 
