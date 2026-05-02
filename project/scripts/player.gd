@@ -112,9 +112,9 @@ func _fire_cast() -> void:
 	recall_timer = CAST_TRAVEL_TIME + RECALL_COOLDOWN
 	fishing_line.visible = true
 
-	_animate_bobber(rod.get_tip_position(), landing)
+	_animate_bobber(landing)
 
-func _animate_bobber(from: Vector2, to: Vector2) -> void:
+func _animate_bobber(to: Vector2) -> void:
 	if cast_tween:
 		cast_tween.kill()
 	cast_tween = create_tween().set_parallel(true)

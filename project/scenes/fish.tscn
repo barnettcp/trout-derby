@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://cpqmm5vdrbknr"]
 
+[ext_resource type="Script" uid="uid://bb2mbd5r00loo" path="res://scripts/fish.gd" id="1_n6yr6"]
+
 [node name="Fish" type="Node2D" unique_id=1532985682]
+script = ExtResource("1_n6yr6")
+
+[node name="MoveTimer" type="Timer" parent="." unique_id=2141135673]
+
+[node name="BiteTimer" type="Timer" parent="." unique_id=204412058]
+
+[node name="DebugDot" type="Sprite2D" parent="." unique_id=1855496824]
+visible = false
+light_mask = 0

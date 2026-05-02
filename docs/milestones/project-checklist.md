@@ -82,13 +82,14 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 8 — Fish System
 
-- [ ] Load `fish_data.json` at startup; instantiate fish nodes
-- [ ] Fish invisible to player
-- [ ] Tick-based movement with per-fish timer interval
-- [ ] Pond boundary containment for fish
-- [ ] Anti-crowding repulsion
-- [ ] Bite proximity check and bite roll
-- [ ] Trophy fish spawning (one per derby)
+- [x] Load `fish_data.json` at startup; instantiate fish nodes
+- [x] Fish invisible to player
+- [x] Tick-based movement with per-fish timer interval
+- [x] Pond boundary containment for fish
+- [x] Anti-crowding repulsion
+- [x] Bite proximity check and bite roll
+- [x] Trophy fish spawning (one per derby)
+- [x] Debug mode to view fish in Godot
 
 ---
 
