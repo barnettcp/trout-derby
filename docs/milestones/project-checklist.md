@@ -61,10 +61,11 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 6 — Player
 
-- [ ] `player.tscn` — sprite, collision shape, movement script
-- [ ] WASD / arrow key movement at 17 px/s, 4-directional snap
-- [ ] Spawn at fixed position near top-left, facing pond
-- [ ] Collision with pond boundary (player cannot enter water)
+- [x] `player.tscn` — sprite, collision shape, movement script
+- [x] WASD / arrow key movement at 17 px/s, 4-directional snap
+- [x] Spawn at fixed position near top-left, facing pond
+- [x] Collision with pond boundary (player cannot enter water)
+- [x] Light tuning of speed
 
 ---
 

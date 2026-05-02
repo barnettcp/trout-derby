@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://bqjwuxmruvstb"]
 
 [ext_resource type="PackedScene" uid="uid://bbmfpfxr4wid4" path="res://scenes/pond.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cxje4dvdorxfm" path="res://scenes/player.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node" unique_id=1739940303]
 
 [node name="Pond" parent="." unique_id=633623421 instance=ExtResource("1_o5qli")]
+
+[node name="Player" parent="." unique_id=518219726 instance=ExtResource("2_0wfyh")]
+position = Vector2(136, 157)
