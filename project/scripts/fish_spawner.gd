@@ -10,7 +10,8 @@ var debug_mode: bool = false :
 	set(value):
 		debug_mode = value
 		for fish in _active_fish:
-			fish.set_debug_visible(value)
+			if is_instance_valid(fish):
+				fish.set_debug_visible(value)
 
 func spawn_all(pond_polygon: PackedVector2Array, limit: int = 0) -> void:
 	var data_list := _load_fish_data()
@@ -45,6 +46,9 @@ func spawn_all(pond_polygon: PackedVector2Array, limit: int = 0) -> void:
 
 func get_fish() -> Array:
 	return _active_fish
+
+func remove_fish(fish: Node) -> void:
+	_active_fish.erase(fish)
 
 func _load_fish_data() -> Array:
 	var file := FileAccess.open(FISH_DATA_PATH, FileAccess.READ)

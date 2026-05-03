@@ -8,7 +8,7 @@ const CAST_TRAVEL_TIME := 0.5
 const RECALL_COOLDOWN := 0.5
 const POWER_BAR_OFFSET := Vector2(0, -26)  # screen-up above player center
 
-enum State { IDLE, CHARGING, BOBBER_OUT }
+enum State { IDLE, CHARGING, BOBBER_OUT, REELING }
 
 var facing := Vector2.UP
 var state := State.IDLE
@@ -19,6 +19,8 @@ var cast_tween: Tween = null
 
 var _water_polygon: PackedVector2Array = []
 var _bobber_scene := preload("res://scenes/bobber.tscn")
+var _biting_fish: Node = null
+var _hud: Node = null
 
 @onready var rod: Node2D = $FishingRod
 @onready var fishing_line: Line2D = $FishingLine
@@ -30,6 +32,8 @@ func _ready() -> void:
 	var water_node = get_tree().get_first_node_in_group("water")
 	if water_node:
 		_water_polygon = water_node.polygon
+		
+	_hud = get_tree().get_first_node_in_group("hud")
 
 func _physics_process(_delta: float) -> void:
 	if state == State.IDLE:
@@ -65,7 +69,10 @@ func _process(delta: float) -> void:
 			if recall_timer > 0.0:
 				recall_timer -= delta
 			elif Input.is_action_just_pressed("cast_action"):
-				_recall_bobber()
+				if bobber and bobber.try_set_hook():
+					pass  # hook_set signal handles the rest
+				else:
+					_recall_bobber()
 
 func _handle_movement() -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -104,6 +111,7 @@ func _fire_cast() -> void:
 		state = State.IDLE
 		return
 
+	# Instantiate First - bobber must exist before any access to it below
 	bobber = _bobber_scene.instantiate()
 	get_parent().add_child(bobber)
 	bobber.global_position = rod.get_tip_position()
@@ -111,7 +119,17 @@ func _fire_cast() -> void:
 	state = State.BOBBER_OUT
 	recall_timer = CAST_TRAVEL_TIME + RECALL_COOLDOWN
 	fishing_line.visible = true
-
+	
+	# Wire fish after bobber exists
+	for fish in get_tree().get_nodes_in_group("fish"):
+		fish.set_bobber(bobber)
+		if not fish.bite_triggered.is_connected(bobber.notify_bite):
+			fish.bite_triggered.connect(bobber.notify_bite)
+	
+	# Connect bobber signals
+	bobber.hook_set.connect(_on_hook_set)
+	bobber.hook_missed.connect(_on_hook_missed)
+	
 	_animate_bobber(landing)
 
 func _animate_bobber(to: Vector2) -> void:
@@ -129,13 +147,57 @@ func _animate_bobber(to: Vector2) -> void:
 func _recall_bobber() -> void:
 	if cast_tween:
 		cast_tween.kill()
+		
 	if bobber:
+		for fish in get_tree().get_nodes_in_group("fish"):
+			fish.clear_bobber()
+			if fish.bite_triggered.is_connected(bobber.notify_bite):
+				fish.bite_triggered.disconnect(bobber.notify_bite)
 		bobber.queue_free()
 		bobber = null
+		
 	fishing_line.visible = false
+	_biting_fish = null
 	state = State.IDLE
 
 func _is_in_water(point: Vector2) -> bool:
 	if _water_polygon.is_empty():
 		return false
 	return Geometry2D.is_point_in_polygon(point, _water_polygon)
+
+func _on_hook_set(fish: Node) -> void:
+	_biting_fish = fish
+	for f in get_tree().get_nodes_in_group("fish"):
+		f.clear_bobber()
+		if bobber and f.bite_triggered.is_connected(bobber.notify_bite):
+			f.bite_triggered.disconnect(bobber.notify_bite)
+	_reel_in()
+
+func _on_hook_missed() -> void:
+	_biting_fish = null
+
+func _reel_in() -> void:
+	state = State.REELING
+	if cast_tween:
+		cast_tween.kill()
+	fishing_line.visible = false
+	# Auto-reel: tween bobber back to rod tip over 2s, then catch
+	cast_tween = create_tween()
+	cast_tween.tween_property(bobber, "global_position", rod.get_tip_position(), 2.0)
+	cast_tween.tween_callback(_on_reel_complete)
+
+func _on_reel_complete() -> void:
+	if _biting_fish and is_instance_valid(_biting_fish):
+		if _hud:
+			_hud.show_catch(_biting_fish)
+		# TODO Phase 10: GameState.add_fish(_biting_fish)
+		# TODO Phase 11: play catch sound here
+		var spawner := get_tree().get_first_node_in_group("fish_spawner")
+		if spawner:
+			spawner.remove_fish(_biting_fish)
+		_biting_fish.queue_free()
+	_biting_fish = null
+	if bobber:
+		bobber.queue_free()
+		bobber = null
+	state = State.IDLE

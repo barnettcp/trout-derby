@@ -92,6 +92,8 @@ func _calc_repulsion() -> Vector2:
 	for fish in _all_fish:
 		if fish == self:
 			continue
+		if not is_instance_valid(fish):
+			continue
 		var diff: Vector2 = global_position - fish.global_position
 		var d: float = diff.length()
 		if d < REPULSION_RADIUS and d > 0.01:

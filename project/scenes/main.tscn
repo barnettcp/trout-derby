@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bbmfpfxr4wid4" path="res://scenes/pond.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cxje4dvdorxfm" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://dguieflltugn4" path="res://scripts/fish_spawner.gd" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dne46pbejh1l7" path="res://scenes/ui/hud.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node" unique_id=1739940303]
 script = ExtResource("1_jyhfs")
@@ -15,3 +16,5 @@ position = Vector2(136, 157)
 
 [node name="FishSpawner" type="Node" parent="." unique_id=914240]
 script = ExtResource("4_tbgi4")
+
+[node name="Hud" parent="." unique_id=1855867253 instance=ExtResource("5_tbgi4")]

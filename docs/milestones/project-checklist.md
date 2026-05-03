@@ -95,11 +95,11 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 9 — Catch Loop
 
-- [ ] Bite cue — `icon_bite_alert.png` appears above bobber, fades over 1 s; bite sound
-- [ ] Hook window — 1 s reaction window on input (click / Space)
-- [ ] Successful hook → auto-reel over 2 s → fish removed from pond
-- [ ] Catch popup — portrait placeholder, species, length, weight, rounds since last caught, TROPHY badge
-- [ ] Fish added to player score
+- [x] Bite cue — `icon_bite_alert.png` appears above bobber, fades over 1 s; bite sound
+- [x] Hook window — 1 s reaction window on input (click / Space)
+- [x] Successful hook → auto-reel over 2 s → fish removed from pond
+- [x] Catch popup — portrait placeholder, species, length, weight, rounds since last caught, TROPHY badge
+- [x] Fish added to player score
 
 ---
 
