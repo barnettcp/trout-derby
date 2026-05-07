@@ -2,18 +2,26 @@ extends CanvasLayer
 
 const POPUP_DURATION := 2.0
 
+const _standard_icon := preload("res://assets/ui/icon_fish_standard.png")
+const _trophy_icon := preload("res://assets/ui/icon_fish_trophy.png")
+
 var _portrait_textures := {}
 var _popup_tween: Tween
+var _fish_count: int = 0
 
 @onready var catch_popup: Panel = $CatchPopup
 @onready var portrait: TextureRect = $CatchPopup/Portrait
 @onready var species_label: Label = $CatchPopup/SpeciesLabel
 @onready var stats_label: Label = $CatchPopup/StatsLabel
 @onready var trophy_badge: Panel = $CatchPopup/TrophyBadge
+@onready var timer_label: Label = $DerbyTimerPanel/TimerLabel
+@onready var fish_count_label: Label = $ScorePanel/ScoreVBox/FishCountLabel
+@onready var fish_icon_grid: GridContainer = $ScorePanel/ScoreVBox/FishIconGrid
 
 func _ready() -> void:
 	_preload_portraits()
 	catch_popup.visible = false
+	GameState.fish_added.connect(_on_fish_added)
 
 func _preload_portraits() -> void:
 	_portrait_textures["rainbow_trout"] = load("res://assets/ui/icon_rainbow_trout.png")
@@ -21,8 +29,29 @@ func _preload_portraits() -> void:
 	_portrait_textures["sally"] = load("res://assets/ui/icon_trophy_sally.png")
 	_portrait_textures["smokey"] = load("res://assets/ui/icon_trophy_smokey.png")
 
+# Called every frame by main.gd during the ACTIVE derby phase.
+func update_timer(seconds_left: float) -> void:
+	var mins: int = int(seconds_left) / 60
+	var secs: int = int(seconds_left) % 60
+	timer_label.text = "%02d:%02d" % [mins, secs]
+
+# Called by main.gd at the start of each new derby.
+func reset_score() -> void:
+	_fish_count = 0
+	fish_count_label.text = "Fish: 0"
+	for child in fish_icon_grid.get_children():
+		child.queue_free()
+
+func _on_fish_added(fish_data: Dictionary) -> void:
+	_fish_count += 1
+	fish_count_label.text = "Fish: %d" % _fish_count
+	var icon := TextureRect.new()
+	icon.texture = _trophy_icon if fish_data["is_trophy"] else _standard_icon
+	icon.custom_minimum_size = Vector2(20, 20)
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	fish_icon_grid.add_child(icon)
+
 func show_catch(fish: Node) -> void:
-	# Portrait — use trophy portrait if applicable, else species portrait
 	if fish.is_trophy and _portrait_textures.has(fish.trophy_name.to_lower()):
 		portrait.texture = _portrait_textures[fish.trophy_name.to_lower()]
 	elif _portrait_textures.has(fish.species):

@@ -11,6 +11,16 @@ bg_color = Color(0.4862745, 0.2901961, 0.16470589, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_136eg"]
 bg_color = Color(0.9529412, 0.85882354, 0.20392157, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj5la"]
+bg_color = Color(0.4862745, 0.2901961, 0.16470589, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gss2c"]
+bg_color = Color(0.4862745, 0.2901961, 0.16470589, 1)
+
 [node name="Hud" type="CanvasLayer" unique_id=1855867253 groups=["hud"]]
 script = ExtResource("1_8qguk")
 
@@ -71,3 +81,59 @@ theme_override_fonts/font = ExtResource("3_bo48s")
 theme_override_font_sizes/font_size = 14
 text = "TROPHY"
 horizontal_alignment = 1
+
+[node name="DerbyTimerPanel" type="Panel" parent="." unique_id=372499176]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 8.0
+offset_right = 100.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj5la")
+
+[node name="TimerLabel" type="Label" parent="DerbyTimerPanel" unique_id=205646845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.9411765, 0.8156863, 1)
+theme_override_fonts/font = ExtResource("3_bo48s")
+theme_override_font_sizes/font_size = 40
+text = "05:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScorePanel" type="PanelContainer" parent="." unique_id=1912443671]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gss2c")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScorePanel" unique_id=1249726690]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScoreVBox" type="VBoxContainer" parent="ScorePanel/MarginContainer" unique_id=528284727]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="FishCountLabel" type="Label" parent="ScorePanel/MarginContainer/ScoreVBox" unique_id=1564521641]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9411765, 0.8156863, 1)
+theme_override_fonts/font = ExtResource("2_bo48s")
+theme_override_font_sizes/font_size = 14
+text = "Fish: 0"
+
+[node name="FishIconGrid" type="GridContainer" parent="ScorePanel/MarginContainer/ScoreVBox" unique_id=1057375752]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 5

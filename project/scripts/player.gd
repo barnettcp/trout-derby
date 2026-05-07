@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 
 	match state:
 		State.IDLE:
-			if Input.is_action_just_pressed("cast_action"):
+			if GameState.is_derby_active and Input.is_action_just_pressed("cast_action"):
 				_start_charging()
 
 		State.CHARGING:
@@ -190,8 +190,8 @@ func _on_reel_complete() -> void:
 	if _biting_fish and is_instance_valid(_biting_fish):
 		if _hud:
 			_hud.show_catch(_biting_fish)
-		# TODO Phase 10: GameState.add_fish(_biting_fish)
 		# TODO Phase 11: play catch sound here
+		GameState.add_fish(_biting_fish)
 		var spawner := get_tree().get_first_node_in_group("fish_spawner")
 		if spawner:
 			spawner.remove_fish(_biting_fish)

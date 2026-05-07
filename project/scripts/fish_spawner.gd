@@ -50,6 +50,12 @@ func get_fish() -> Array:
 func remove_fish(fish: Node) -> void:
 	_active_fish.erase(fish)
 
+func despawn_all() -> void:
+	for fish in _active_fish:
+		if is_instance_valid(fish):
+			fish.queue_free()
+	_active_fish.clear()
+
 func _load_fish_data() -> Array:
 	var file := FileAccess.open(FISH_DATA_PATH, FileAccess.READ)
 	if file == null:

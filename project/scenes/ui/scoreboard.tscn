@@ -1,3 +1,101 @@
 [gd_scene format=3 uid="uid://dmfv0703si70x"]
 
+[ext_resource type="Script" uid="uid://dqnfuoj1md8c2" path="res://scripts/ui/scoreboard.gd" id="1_0vowc"]
+[ext_resource type="FontFile" uid="uid://bcd88vclbgt8u" path="res://assets/fonts/fredoka/Fredoka-VariableFont_wdth,wght.ttf" id="1_48oo3"]
+[ext_resource type="FontFile" uid="uid://ccxaocycr8hx0" path="res://assets/fonts/silkscreen/Silkscreen-Regular.ttf" id="2_0vowc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vowc"]
+bg_color = Color(0.4862745, 0.2901961, 0.16470589, 1)
+
 [node name="Scoreboard" type="CanvasLayer" unique_id=1973181957]
+layer = 10
+script = ExtResource("1_0vowc")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=331224925]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="ScorePanel" type="Panel" parent="." unique_id=1482490404]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -220.0
+offset_right = 240.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vowc")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScorePanel" unique_id=1623560838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="ScorePanel/MarginContainer" unique_id=1321523014]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=2037419309]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9411765, 0.8156863, 1)
+theme_override_fonts/font = ExtResource("1_48oo3")
+theme_override_font_sizes/font_size = 32
+text = "DERBY OVER!"
+
+[node name="PlayerLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=312637533]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0vowc")
+theme_override_font_sizes/font_size = 18
+
+[node name="Separator1" type="HSeparator" parent="ScorePanel/MarginContainer/VBox" unique_id=1425362694]
+layout_mode = 2
+
+[node name="FishCountLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=582257060]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9411765, 0.8156863, 1)
+theme_override_fonts/font = ExtResource("2_0vowc")
+text = "Caught: 0 fish"
+
+[node name="ModifiersLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=2107578864]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=1571068042]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9411765, 0.8156863, 1)
+theme_override_fonts/font = ExtResource("1_48oo3")
+theme_override_font_sizes/font_size = 24
+text = "SCORE: 0"
+
+[node name="Separator2" type="HSeparator" parent="ScorePanel/MarginContainer/VBox" unique_id=1860836137]
+layout_mode = 2
+
+[node name="AwardsLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=1115673285]
+layout_mode = 2
+
+[node name="Separator3" type="HSeparator" parent="ScorePanel/MarginContainer/VBox" unique_id=1844940492]
+layout_mode = 2
+
+[node name="NextDerbyLabel" type="Label" parent="ScorePanel/MarginContainer/VBox" unique_id=1298986070]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9411765, 0.8156863, 1)
+theme_override_fonts/font = ExtResource("2_0vowc")
+theme_override_font_sizes/font_size = 28
+text = "Next derby in: 1:00"
+
+[node name="DismissButton" type="Button" parent="ScorePanel/MarginContainer/VBox" unique_id=1311047656]
+layout_mode = 2
+text = "Dismiss"
