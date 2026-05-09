@@ -40,8 +40,8 @@ func _ready() -> void:
 
 # Called every frame by main.gd during POST_DERBY.
 func update_countdown(seconds_left: float) -> void:
-	var mins: int = int(seconds_left) / 60
-	var secs: int = int(seconds_left) % 60
+	var mins: int = floori(seconds_left / 60.0)
+	var secs: int = floori(fmod(seconds_left, 60.0))
 	next_derby_label.text = "Next derby in: %02d:%02d" % [mins, secs]
 
 func dismiss() -> void:

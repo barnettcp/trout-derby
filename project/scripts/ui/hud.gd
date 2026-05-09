@@ -15,8 +15,8 @@ var _fish_count: int = 0
 @onready var stats_label: Label = $CatchPopup/StatsLabel
 @onready var trophy_badge: Panel = $CatchPopup/TrophyBadge
 @onready var timer_label: Label = $DerbyTimerPanel/TimerLabel
-@onready var fish_count_label: Label = $ScorePanel/ScoreVBox/FishCountLabel
-@onready var fish_icon_grid: GridContainer = $ScorePanel/ScoreVBox/FishIconGrid
+@onready var fish_count_label: Label = $ScorePanel/MarginContainer/ScoreVBox/FishCountLabel
+@onready var fish_icon_grid: GridContainer = $ScorePanel/MarginContainer/ScoreVBox/FishIconGrid
 
 func _ready() -> void:
 	_preload_portraits()
@@ -31,8 +31,8 @@ func _preload_portraits() -> void:
 
 # Called every frame by main.gd during the ACTIVE derby phase.
 func update_timer(seconds_left: float) -> void:
-	var mins: int = int(seconds_left) / 60
-	var secs: int = int(seconds_left) % 60
+	var mins: int = floori(seconds_left / 60.0)
+	var secs: int = floori(fmod(seconds_left, 60.0))
 	timer_label.text = "%02d:%02d" % [mins, secs]
 
 # Called by main.gd at the start of each new derby.
