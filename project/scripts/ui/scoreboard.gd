@@ -1,12 +1,12 @@
 extends CanvasLayer
 
-@onready var player_label: Label = $ScorePanel/VBox/PlayerLabel
-@onready var fish_count_label: Label = $ScorePanel/VBox/FishCountLabel
-@onready var modifiers_label: Label = $ScorePanel/VBox/ModifiersLabel
-@onready var score_label: Label = $ScorePanel/VBox/ScoreLabel
-@onready var awards_label: Label = $ScorePanel/VBox/AwardsLabel
-@onready var next_derby_label: Label = $ScorePanel/VBox/NextDerbyLabel
-@onready var dismiss_button: Button = $ScorePanel/VBox/DismissButton
+@onready var player_label: Label = $ScorePanel/MarginContainer/VBox/PlayerLabel
+@onready var fish_count_label: Label = $ScorePanel/MarginContainer/VBox/FishCountLabel
+@onready var modifiers_label: Label = $ScorePanel/MarginContainer/VBox/ModifiersLabel
+@onready var score_label: Label = $ScorePanel/MarginContainer/VBox/ScoreLabel
+@onready var awards_label: Label = $ScorePanel/MarginContainer/VBox/AwardsLabel
+@onready var next_derby_label: Label = $ScorePanel/MarginContainer/VBox/NextDerbyLabel
+@onready var dismiss_button: Button = $ScorePanel/MarginContainer/VBox/DismissButton
 
 func _ready() -> void:
 	player_label.text = GameState.player_name
