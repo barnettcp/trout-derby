@@ -21,6 +21,7 @@ var _fish_count: int = 0
 func _ready() -> void:
 	_preload_portraits()
 	catch_popup.visible = false
+	timer_label.text = "--:--"
 	GameState.fish_added.connect(_on_fish_added)
 
 func _preload_portraits() -> void:
