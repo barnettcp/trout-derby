@@ -52,6 +52,8 @@ func _process(_delta: float) -> void:
 					_scoreboard.dismiss()
 					_scoreboard = null
 				countdown_overlay.visible = true
+			if _auto_closed_scoreboard:
+				countdown_label.text = "Derby starts in: %d" % ceili(t)
 
 # --- Phase transitions ---
 
@@ -89,7 +91,7 @@ func _on_between_timeout() -> void:
 		_scoreboard = null
 	fish_spawner.despawn_all()
 	fish_spawner.spawn_all(_water_polygon)
-	_enter_pre_countdown()
+	_start_derby()
 
 # --- Debug ---
 
