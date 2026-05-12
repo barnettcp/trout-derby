@@ -125,6 +125,11 @@ func _on_bite_tick() -> void:
 	if randf() <= chance:
 		emit_signal("bite_triggered", self)
 
+func deactivate() -> void:
+	move_timer.stop()
+	bite_timer.stop()
+	visible = false
+
 # --- Debug ---
 
 func set_debug_visible(enabled: bool) -> void:

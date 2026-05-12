@@ -53,10 +53,13 @@ func _on_fish_added(fish_data: Dictionary) -> void:
 
 func show_catch(fish: Node) -> void:
 	if fish.is_trophy:
-		var key: String = fish.trophy_name.to_lower().split(" ")[0]
-		if _portrait_textures.has(key):
-			portrait.texture = _portrait_textures[key]
-		elif _portrait_textures.has(fish.species):
+		var matched := false
+		for word in fish.trophy_name.to_lower().split(" "):
+			if _portrait_textures.has(word):
+				portrait.texture = _portrait_textures[word]
+				matched = true
+				break
+		if not matched and _portrait_textures.has(fish.species):
 			portrait.texture = _portrait_textures[fish.species]
 	elif _portrait_textures.has(fish.species):
 		portrait.texture = _portrait_textures[fish.species]

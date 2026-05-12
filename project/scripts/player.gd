@@ -172,6 +172,10 @@ func _on_hook_set(fish: Node) -> void:
 		f.clear_bobber()
 		if bobber and f.bite_triggered.is_connected(bobber.notify_bite):
 			f.bite_triggered.disconnect(bobber.notify_bite)
+	var spawner := get_tree().get_first_node_in_group("fish_spawner")
+	if spawner:
+		spawner.remove_fish(_biting_fish)
+	_biting_fish.deactivate()
 	_reel_in()
 
 func _on_hook_missed() -> void:
@@ -193,9 +197,6 @@ func _on_reel_complete() -> void:
 			_hud.show_catch(_biting_fish)
 		# TODO Phase 11: play catch sound here
 		GameState.add_fish(_biting_fish)
-		var spawner := get_tree().get_first_node_in_group("fish_spawner")
-		if spawner:
-			spawner.remove_fish(_biting_fish)
 		_biting_fish.queue_free()
 	_biting_fish = null
 	if bobber:
