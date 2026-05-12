@@ -19,6 +19,15 @@ const TURN_ANGLE_MAX := deg_to_rad(110.0)
 const REPULSION_RADIUS := 2.0 * PIXELS_PER_METER
 const REPULSION_STRENGTH := 0.5
 
+# --- Wake ripple ---
+const WAKE_DURATION := 0.6
+const WAKE_FAN_ANGLE := deg_to_rad(20.0)
+const WAKE_ARM_SCALE := 2.0       # arm length = dist * this
+const WAKE_COLOR := Color("#FFF0D0")
+const WAKE_START_ALPHA := 0.55
+const WAKE_CHANCE_MIN := 0.2      # at MOVE_DIST_MIN
+const WAKE_CHANCE_MAX := 0.8      # at MOVE_DIST_MAX
+
 var _heading: float = 0.0  # radians
 var _pond_polygon: PackedVector2Array = []
 var _all_fish: Array = []  # filled by spawner for anti-crowding
@@ -75,6 +84,12 @@ func _on_move_tick() -> void:
 		_heading = move_vec.angle()
 
 	var dist: float = randf_range(MOVE_DIST_MIN, MOVE_DIST_MAX)
+
+	# Spawn wake ripple with probability proportional to movement distance
+	var t := (dist - MOVE_DIST_MIN) / (MOVE_DIST_MAX - MOVE_DIST_MIN)
+	if randf() < lerpf(WAKE_CHANCE_MIN, WAKE_CHANCE_MAX, t):
+		_spawn_wake(global_position, dist)
+
 	var candidate: Vector2 = global_position + move_vec * dist
 
 	if Geometry2D.is_point_in_polygon(candidate, _pond_polygon):
@@ -86,6 +101,28 @@ func _on_move_tick() -> void:
 		if Geometry2D.is_point_in_polygon(reflected, _pond_polygon):
 			global_position = reflected
 		# If both fail (very edge case), stay put this tick
+
+func _spawn_wake(start_pos: Vector2, dist: float) -> void:
+	var arm_length := dist * WAKE_ARM_SCALE
+	var backward := Vector2.RIGHT.rotated(_heading + PI)
+
+	var wake := Node2D.new()
+	wake.global_position = start_pos
+	get_parent().add_child(wake)
+
+	for side in [-1, 1]:
+		var arm_dir := backward.rotated(WAKE_FAN_ANGLE * side)
+		var line := Line2D.new()
+		line.add_point(Vector2.ZERO)
+		line.add_point(arm_dir * arm_length)
+		line.width = 1.5
+		line.default_color = WAKE_COLOR
+		wake.add_child(line)
+
+	wake.modulate.a = WAKE_START_ALPHA
+	var tween := wake.create_tween()
+	tween.tween_property(wake, "modulate:a", 0.0, WAKE_DURATION)
+	tween.tween_callback(func() -> void: wake.queue_free())
 
 func _calc_repulsion() -> Vector2:
 	var force := Vector2.ZERO
