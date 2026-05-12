@@ -1,10 +1,11 @@
 extends Node
 
-enum DerbyPhase { PRE_COUNTDOWN, ACTIVE, POST_DERBY }
+enum DerbyPhase { MENU, PRE_COUNTDOWN, ACTIVE, POST_DERBY }
 
 const _scoreboard_scene := preload("res://scenes/ui/scoreboard.tscn")
+const _main_menu_scene := preload("res://scenes/ui/main_menu.tscn")
 
-var _phase: DerbyPhase = DerbyPhase.PRE_COUNTDOWN
+var _phase: DerbyPhase = DerbyPhase.MENU
 var _water_polygon: PackedVector2Array = []
 var _hud: Node = null
 var _scoreboard: Node = null
@@ -26,12 +27,18 @@ func _ready() -> void:
 	_hud = get_tree().get_first_node_in_group("hud")
 
 	fish_spawner.spawn_all(_water_polygon)
+	countdown_overlay.visible = false
 
 	pre_countdown_timer.timeout.connect(_on_pre_countdown_timeout)
 	derby_timer.timeout.connect(_on_derby_timeout)
 	between_timer.timeout.connect(_on_between_timeout)
 
-	_enter_pre_countdown()
+	var menu := _main_menu_scene.instantiate()
+	add_child(menu)
+	menu.join_confirmed.connect(func() -> void:
+		menu.queue_free()
+		_enter_pre_countdown()
+	)
 
 func _process(_delta: float) -> void:
 	match _phase:

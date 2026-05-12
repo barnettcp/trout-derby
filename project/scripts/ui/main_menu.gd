@@ -1,5 +1,7 @@
 extends Control
 
+signal join_confirmed
+
 @onready var name_input: LineEdit = $CenterContainer/VBoxContainer/NameRow/NameInput
 @onready var btn_2min: Button = $CenterContainer/VBoxContainer/DurationRow/Btn2Min
 @onready var btn_5min: Button = $CenterContainer/VBoxContainer/DurationRow/Btn5Min
@@ -31,7 +33,7 @@ func _update_duration_buttons() -> void:
 func _on_join_pressed() -> void:
 	var raw_name := name_input.text.strip_edges()
 	GameState.player_name = raw_name if not raw_name.is_empty() else "Angler"
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	emit_signal("join_confirmed")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
