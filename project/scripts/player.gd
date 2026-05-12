@@ -121,12 +121,6 @@ func _fire_cast() -> void:
 	fishing_line.points = PackedVector2Array([rod.get_tip_position(), bobber.global_position])
 	fishing_line.visible = true
 	
-	# Wire fish after bobber exists
-	for fish in get_tree().get_nodes_in_group("fish"):
-		fish.set_bobber(bobber)
-		if not fish.bite_triggered.is_connected(bobber.notify_bite):
-			fish.bite_triggered.connect(bobber.notify_bite)
-	
 	# Connect bobber signals
 	bobber.hook_set.connect(_on_hook_set)
 	bobber.hook_missed.connect(_on_hook_missed)
@@ -144,6 +138,15 @@ func _animate_bobber(to: Vector2) -> void:
 				bobber.scale = Vector2.ONE * (1.0 + 0.5 * sin(t * PI)),
 		0.0, 1.0, CAST_TRAVEL_TIME
 	)
+	cast_tween.chain().tween_callback(_on_bobber_landed)
+
+func _on_bobber_landed() -> void:
+	if bobber == null:
+		return
+	for fish in get_tree().get_nodes_in_group("fish"):
+		fish.set_bobber(bobber)
+		if not fish.bite_triggered.is_connected(bobber.notify_bite):
+			fish.bite_triggered.connect(bobber.notify_bite)
 
 func _recall_bobber() -> void:
 	if cast_tween:
