@@ -118,6 +118,7 @@ func _fire_cast() -> void:
 
 	state = State.BOBBER_OUT
 	recall_timer = CAST_TRAVEL_TIME + RECALL_COOLDOWN
+	fishing_line.points = PackedVector2Array([rod.get_tip_position(), bobber.global_position])
 	fishing_line.visible = true
 	
 	# Wire fish after bobber exists
