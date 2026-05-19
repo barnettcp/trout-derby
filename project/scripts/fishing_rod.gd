@@ -1,6 +1,7 @@
 extends Node2D
 
 const ARC_HALF_ANGLE := PI * 75.0 / 180.0  # 75° in radians
+const ROD_VISUAL_OFFSET := PI * 20.0 / 180.0  # tilts sprite off-center; negate for left-hand
 
 var cast_direction := Vector2.UP  # exposed so player.gd can read it
 
@@ -16,8 +17,8 @@ func update_rotation(player_facing: Vector2, cursor_world: Vector2) -> void:
 		var clamped : float = clamp(delta, -ARC_HALF_ANGLE, ARC_HALF_ANGLE)
 		cast_direction = Vector2.RIGHT.rotated(facing_angle + clamped)
 
-	# + PI/2 because the rod sprite points up at rotation 0
-	global_rotation = cast_direction.angle() + PI / 2.0
+	# + PI/2 because the rod sprite points up at rotation 0; offset tilts sprite visually
+	global_rotation = cast_direction.angle() + PI / 2.0 + ROD_VISUAL_OFFSET
 
 func get_tip_position() -> Vector2:
 	return $RodTip.global_position

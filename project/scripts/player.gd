@@ -50,8 +50,11 @@ func _physics_process(_delta: float) -> void:
 		])
 
 func _process(delta: float) -> void:
+	var to_mouse := get_global_mouse_position() - global_position
+	if to_mouse.length() > 1.0:
+		facing = to_mouse.normalized()
 	rod.update_rotation(facing, get_global_mouse_position())
-	rotation = (get_global_mouse_position() - global_position).angle() + PI / 2.0
+	rotation = facing.angle() + PI / 2.0
 
 	# Keep top-level nodes positioned above the player in screen space
 	power_bar.global_position = global_position + POWER_BAR_OFFSET + Vector2(-32, 0)
@@ -78,9 +81,7 @@ func _process(delta: float) -> void:
 
 func _handle_movement() -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if input_dir.length() > 0.1:
-		facing = input_dir.normalized()
-	var target_velocity := input_dir.normalized() * SPEED
+	var target_velocity := input_dir.rotated(facing.angle() + PI / 2.0) * SPEED
 	velocity = velocity.move_toward(target_velocity, ACCEL * get_physics_process_delta_time())
 
 func _start_charging() -> void:
