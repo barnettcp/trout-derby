@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const POPUP_DURATION := 2.0
+const POPUP_DURATION := 8.0 # Changed to 8 seconds
 
 const _standard_icon := preload("res://assets/ui/icon_fish_standard.png")
 const _trophy_icon := preload("res://assets/ui/icon_fish_trophy.png")
@@ -53,6 +53,8 @@ func _on_fish_added(fish_data: Dictionary) -> void:
 	fish_icon_grid.add_child(icon)
 
 func show_catch(fish: Node) -> void:
+
+	# Show a trophy first if caught, using name to match to the right icon
 	if fish.is_trophy:
 		var matched := false
 		for word in fish.trophy_name.to_lower().split(" "):
@@ -62,6 +64,7 @@ func show_catch(fish: Node) -> void:
 				break
 		if not matched and _portrait_textures.has(fish.species):
 			portrait.texture = _portrait_textures[fish.species]
+	# Otherwise show a species portrait
 	elif _portrait_textures.has(fish.species):
 		portrait.texture = _portrait_textures[fish.species]
 
