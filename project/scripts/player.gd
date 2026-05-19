@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED := 55.0
+const ACCEL := 400.0
 const CHARGE_DURATION := 1.0
 const MIN_CAST_DIST := 75.0
 const MAX_CAST_DIST := 270.0
@@ -50,6 +51,7 @@ func _physics_process(_delta: float) -> void:
 
 func _process(delta: float) -> void:
 	rod.update_rotation(facing, get_global_mouse_position())
+	rotation = (get_global_mouse_position() - global_position).angle() + PI / 2.0
 
 	# Keep top-level nodes positioned above the player in screen space
 	power_bar.global_position = global_position + POWER_BAR_OFFSET + Vector2(-32, 0)
@@ -77,14 +79,9 @@ func _process(delta: float) -> void:
 func _handle_movement() -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if input_dir.length() > 0.1:
-		if abs(input_dir.x) >= abs(input_dir.y):
-			facing = Vector2(sign(input_dir.x), 0)
-		else:
-			facing = Vector2(0, sign(input_dir.y))
-		velocity = facing * SPEED
-		rotation = facing.angle() + PI / 2.0
-	else:
-		velocity = Vector2.ZERO
+		facing = input_dir.normalized()
+	var target_velocity := input_dir.normalized() * SPEED
+	velocity = velocity.move_toward(target_velocity, ACCEL * get_physics_process_delta_time())
 
 func _start_charging() -> void:
 	state = State.CHARGING
