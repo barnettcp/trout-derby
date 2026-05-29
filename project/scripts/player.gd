@@ -8,6 +8,7 @@ const MAX_CAST_DIST := 270.0
 const CAST_TRAVEL_TIME := 0.5
 const RECALL_COOLDOWN := 0.5
 const POWER_BAR_OFFSET := Vector2(0, -26)  # screen-up above player center
+const NAME_LABEL_OFFSET := Vector2(-40, 18) # -40 centers the 80 px label; 18 drops it below the sprite
 
 enum State { IDLE, CHARGING, BOBBER_OUT, REELING }
 
@@ -27,6 +28,7 @@ var _hud: Node = null
 @onready var fishing_line: Line2D = $FishingLine
 @onready var power_bar: Node2D = $PowerBar
 @onready var power_fill: ColorRect = $PowerBar/Fill
+@onready var name_label: Label = $NameLabel
 
 func _ready() -> void:
 	# Grab the pond polygon for water validation
@@ -35,6 +37,12 @@ func _ready() -> void:
 		_water_polygon = water_node.polygon
 		
 	_hud = get_tree().get_first_node_in_group("hud")
+	
+	# Set the player name
+	name_label.text = GameState.player_name
+	GameState.derby_started.connect(func() -> void:
+		name_label.text = GameState.player_name
+		)
 
 func _physics_process(_delta: float) -> void:
 	if state == State.IDLE:
@@ -58,6 +66,7 @@ func _process(delta: float) -> void:
 
 	# Keep top-level nodes positioned above the player in screen space
 	power_bar.global_position = global_position + POWER_BAR_OFFSET + Vector2(-32, 0)
+	name_label.global_position = global_position + NAME_LABEL_OFFSET
 
 	match state:
 		State.IDLE:
