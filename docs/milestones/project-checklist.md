@@ -105,19 +105,19 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 10 — Derby and UI
 
-- [ ] Main menu scene — Join Derby button, settings (timer duration, player name)
-- [ ] Derby timer — configurable 2 or 5 min; 10 s pre-derby countdown overlay
-- [ ] In-game HUD — timer, score box with fish icon grid
-- [ ] End-of-round scoreboard — rankings, awards (most fish, biggest catch, trophy catch)
-- [ ] 1-minute between-derby countdown; dismissible; auto-close at 10 s remaining
-- [ ] Score modifiers applied (longest, shortest, heaviest, trophy)
+- [x] Main menu scene — Join Derby button, settings (timer duration, player name)
+- [x] Derby timer — configurable 2 or 5 min; 10 s pre-derby countdown overlay
+- [x] In-game HUD — timer, score box with fish icon grid
+- [x] End-of-round scoreboard — rankings, awards (most fish, biggest catch, trophy catch)
+- [x] 1-minute between-derby countdown; dismissible; auto-close at 10 s remaining
+- [x] Score modifiers applied (longest, shortest, heaviest, trophy)
 
 ---
 
 ## Phase 11 — Audio
 
-- [ ] Cast sound
-- [ ] Bite indicator sound
+- [x] Cast sound
+- [x] Bite indicator sound
 - [ ] Catch sound
 - [ ] Round end sound
 
