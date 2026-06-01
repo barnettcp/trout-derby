@@ -29,6 +29,7 @@ var _hud: Node = null
 @onready var power_bar: Node2D = $PowerBar
 @onready var power_fill: ColorRect = $PowerBar/Fill
 @onready var name_label: Label = $NameLabel
+@onready var cast_sound: AudioStreamPlayer = $CastSoundPlayer
 
 func _ready() -> void:
 	# Grab the pond polygon for water validation
@@ -132,6 +133,7 @@ func _fire_cast() -> void:
 	bobber.hook_set.connect(_on_hook_set)
 	bobber.hook_missed.connect(_on_hook_missed)
 	
+	cast_sound.play()
 	_animate_bobber(landing)
 
 func _animate_bobber(to: Vector2) -> void:
