@@ -10,6 +10,7 @@ var _waiting_for_hook := false
 
 @onready var bite_alert: Sprite2D = $BiteAlert
 @onready var hook_timer: Timer = $HookTimer
+@onready var bite_sound: AudioStreamPlayer = $BiteSoundPlayer
 
 func _ready() -> void:
 	hook_timer.timeout.connect(_on_hook_window_expired)
@@ -22,7 +23,7 @@ func notify_bite(fish: Node) -> void:
 	bite_alert.visible = true
 	bite_alert.modulate.a = 1.0
 	hook_timer.start()
-	# TODO Phase 11: play bite sound here
+	bite_sound.play()
 
 func try_set_hook() -> bool:
 	if not _waiting_for_hook:
