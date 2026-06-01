@@ -30,6 +30,7 @@ var _hud: Node = null
 @onready var power_fill: ColorRect = $PowerBar/Fill
 @onready var name_label: Label = $NameLabel
 @onready var cast_sound: AudioStreamPlayer = $CastSoundPlayer
+@onready var bobber_land_sound: AudioStreamPlayer = $BobberLandedPlayer
 
 func _ready() -> void:
 	# Grab the pond polygon for water validation
@@ -152,6 +153,7 @@ func _animate_bobber(to: Vector2) -> void:
 func _on_bobber_landed() -> void:
 	if bobber == null:
 		return
+	bobber_land_sound.play()
 	for fish in get_tree().get_nodes_in_group("fish"):
 		fish.set_bobber(bobber)
 		if not fish.bite_triggered.is_connected(bobber.notify_bite):
