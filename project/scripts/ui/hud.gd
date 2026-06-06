@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const POPUP_DURATION := 8.0 # Changed to 8 seconds
+const INITIAL_ICON_SLOTS := 10
 
 const _standard_icon := preload("res://assets/ui/icon_fish_standard.png")
 const _trophy_icon := preload("res://assets/ui/icon_fish_trophy.png")
@@ -20,9 +21,19 @@ var _fish_count: int = 0
 
 func _ready() -> void:
 	_preload_portraits()
+	_create_placeholder_icons()
 	catch_popup.visible = false
 	timer_label.text = "--:--"
 	GameState.fish_added.connect(_on_fish_added)
+
+func _create_placeholder_icons() -> void:
+	for _i in INITIAL_ICON_SLOTS:
+		var icon := TextureRect.new()
+		icon.texture = _standard_icon
+		icon.modulate.a = 0.2
+		icon.custom_minimum_size = Vector2(20, 20)
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		fish_icon_grid.add_child(icon)
 
 func _preload_portraits() -> void:
 	_portrait_textures["rainbow_trout"] = load("res://assets/ui/icon_rainbow_trout.png")
@@ -39,18 +50,39 @@ func update_timer(seconds_left: float) -> void:
 # Called by main.gd at the start of each new derby.
 func reset_score() -> void:
 	_fish_count = 0
-	fish_count_label.text = "Fish: 0"
-	for child in fish_icon_grid.get_children():
+	fish_count_label.text = "Fish: %d" % _fish_count
+	
+	# Reset the original placeholder icons
+	for i in min(fish_icon_grid.get_child_count(), INITIAL_ICON_SLOTS):
+		var icon: TextureRect = fish_icon_grid.get_child(i)
+		icon.modulate.a = 0.2
+		icon.texture = _standard_icon
+
+	# Remove any extra icons that were added beyond the initial set
+	for i in range(fish_icon_grid.get_child_count() - 1, INITIAL_ICON_SLOTS - 1, -1):
+		var child = fish_icon_grid.get_child(i)
+		fish_icon_grid.remove_child(child)
 		child.queue_free()
 
 func _on_fish_added(fish_data: Dictionary) -> void:
-	_fish_count += 1
-	fish_count_label.text = "Fish: %d" % _fish_count
-	var icon := TextureRect.new()
+	fish_count_label.text = "Fish: %d" % (_fish_count + 1)
+
+	# If we've run out of icon slots, add a new row of placeholders.
+	if _fish_count >= fish_icon_grid.get_child_count():
+		for _i in fish_icon_grid.columns:
+			var new_icon := TextureRect.new()
+			new_icon.texture = _standard_icon
+			new_icon.modulate.a = 0.2
+			new_icon.custom_minimum_size = Vector2(20, 20)
+			new_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			fish_icon_grid.add_child(new_icon)
+
+	# Get the icon for the current fish and update its appearance
+	var icon: TextureRect = fish_icon_grid.get_child(_fish_count)
 	icon.texture = _trophy_icon if fish_data["is_trophy"] else _standard_icon
-	icon.custom_minimum_size = Vector2(20, 20)
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	fish_icon_grid.add_child(icon)
+	icon.modulate.a = 1.0
+	
+	_fish_count += 1
 
 func show_catch(fish: Node) -> void:
 
