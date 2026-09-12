@@ -17,7 +17,7 @@ Playable single-player fishing game with one pond, a full fishing loop, and a de
 
 ### Player
 - [x] Rectangular block character (32×18 px body) with round head; single sprite rotated by Godot
-- [ ] WASD/arrow movement at 1.1 m/s (~17 px/s); snaps to 4 cardinal directions
+- [ ] WASD/arrow movement at 1.1 m/s (~17 px/s); snaps to 4 cardinal directions (movement specs TBD)
 - [x] Collision with pond boundary
 
 ### Fishing
