@@ -125,11 +125,11 @@ Polish and art refinement are deliberately deferred — the goal of the prototyp
 
 ## Phase 12 — Prototype Polish and Testing
 
-- [ ] Play-test full fishing loop end to end
+- [x] Play-test full fishing loop end to end
 - [ ] Tune fish movement tick intervals, bite rates, and fish count for feel
 - [ ] Verify HUD layout at 1280×720; check score box overflow behavior
 - [ ] Fix any collision, input, or timing edge cases
-- [ ] Accept blurry art as-is; note sharpness pass as post-prototype task
+- [x] Accept blurry art as-is; note sharpness pass as post-prototype task
 
 ---
 
